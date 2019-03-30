@@ -1,0 +1,91 @@
+body{
+    background: -webkit-linear-gradient(top,#F3FCFF, #FDFf9F2); /*Degradar los colores*/
+    
+    margin: 0;
+}
+#cuerpo{
+
+    padding:5px;/*margen*/
+    cursor:pointer;
+   
+    /*Centrar formulario*/
+    margin-left: auto; 
+    margin-right: auto;
+    margin-top: 3%; /*Margen superior*/
+
+    border-radius:5px; /*probar con 10px se hacen ovalados los inputs*/
+    box-shadow: 2px 2px 4px 0px rgba(0,0,0,.8); /*Profundidad*/
+    background: -webkit-linear-gradient(top,#F3FCFF, #8ACED7); /*Degradar los colores*/
+    height: 150px; /*Alto caja text*/
+    width: 60%; /*Ancho de la caja*/
+    border:0px;
+}
+#titulo{
+    margin-top: 20px;/*Margen superior*/
+    font-family:"Myriad Pro", Arial Bold; /*Tipo letra*/
+    font-size: 25px; /* Tamaño Letra*/
+    font-style: italic;/*Estilo letra*/
+    text-align: center;/*Centrar texto*/
+}
+input#doc, input#fec{
+    margin-top: 0px;
+    border-radius:5px; /*probar con 10px se hacen ovalados los inputs*/
+    box-shadow: 2px 2px 5px 1px rgba(0,0,0,.8); /*Profundidad*/
+    font:bold italic 16px Arial, Helvetica, sans-serif ; /*Tipo letra*/
+    height: 35px; /*Alto caja text*/
+    width: 70%; /*Ancho caja text*/
+}
+#nomDocumento, #fecha, #textDoc, #textFec{
+    padding-left: 10%;/*padding-left = sangria*/
+}
+#textDoc, #textFec{
+    font:bold italic 15px Arial, Helvetica, sans-serif; /*Tipo letra*/
+}
+input#btnBuscar{
+    margin-top: 5px;
+
+    border-radius:5px; /*probar con 10px se hacen ovalados los inputs*/
+    box-shadow: 2px 2px 3px 1px rgba(0,0,0,.8); /*Profundidad*/
+    font-family:"Myriad Pro", Arial Bold; /*Tipo letra*/
+    font-size: 25px; /* Tamaño Letra*/
+    font-style: italic;/*Estilo letra*/ /*Tipo letra*/
+    height: 35px; /*Alto caja text*/
+    width: 150px; /*Ancho caja text*/
+    background: -webkit-linear-gradient(top, #BD6A07 0%,  #F9F22B 20%, #D9B661 50%, #FFFFFF 60%, #D8AB3D 70%, #724612 100%); /*Degradar los colores*/
+    color: #000; /*Color del texto*/
+}
+input#btnBuscar:hover{/*este se utiliza para cambiar el color al seleccionar*/
+    background: -webkit-linear-gradient(top, #D69F5D 0%,  #FFFB7E 20%, #F2D899 50%, #FFFFFF 60%, #F7CD65 70%, #A96F2A 100%);;
+     color:#000;
+}
+#btn{
+    text-align: center;/*Centrar boton*/
+}
+#RetencionDoc {
+    
+   padding:5px;/*margen*/
+   cursor:pointer;
+    font-size: 19px;
+    
+    /*Centrar formulario*/
+    margin-left: auto; 
+    margin-right: auto;
+    margin-top: 15%;
+
+    border-radius:5px; /*probar con 10px se hacen ovalados los inputs*/
+    box-shadow: 2px 2px 3px 1px rgba(0,0,0,.8); /*Profundidad*/
+    background: -webkit-linear-gradient(top,#F3FCFF, #8ACED7); /*Degradar los colores*/  
+    width: 60%;/*Ancho caja text*/
+    height: 300px;/*Alto caja text*/
+    margin-top: 65
+    
+}
+#Retencion1,#Retencion2,#Retencion3,#Retencion4,#fechaR2,#fechaR1,#fechaR,#fechaR3{
+    font-size:12px;/*tamaño de letra
+    font-family:, Arial ; /*Tipo letra*/
+    width: 20;/*ancho de la caja*/
+    margin-top: 20px;
+   
+
+
+}
