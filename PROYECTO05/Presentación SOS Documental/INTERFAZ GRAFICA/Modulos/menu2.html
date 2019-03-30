@@ -1,0 +1,124 @@
+
+<html>
+    <head>
+        <!--&#91;if lt IE 9&#93;> <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script> < !&#91;endif&#93;-->
+
+<!--        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">-->
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <title>PRINCIPAL</title>
+        <link type="text/css" href="../Css/estilos/estilo_2.css" rel="stylesheet" />
+    </head>
+    <body>
+    
+        <header>
+            <div class="cabecera" >   
+                <div id="logo">
+                     <a href="menu2.html"><img src="../Css/imagenes/LOGO.gif" alt="No se puede cargar la imagen"></a>
+                </div>
+                <div class="userr">
+                    <div id="usuario">
+                        <a  name= "salir" href="login.html"><img src="../Iconos/user.png" alt="No se puede cargar la imagen" onclick="pregunta()"></a>
+                    </div>
+                    <div id="user">
+                        <label>Usuario:</label>
+                        <br/>
+                        <label>Andres Rico</label>
+                    </div>
+                </div>
+            </div> 
+            <nav>
+            <ul class="menu" >
+                <li><a id="menus" href="#" target="_parent"><img src="../Iconos/mod.png" class="centrado" width="30px"  />Archivo</a></li>
+                <li><a  id="menus"href="#"><img src="../Iconos/editar.png" class="centrado" width="30px"  />Editar </a>
+                    <ul>
+                    <li><a id="menus" href="#">Deshacer </a></li>
+                    <hr> 
+                    <li><a id="menus" href="#">Rehacer </a></li>
+                    <hr> 
+                    <li><a id="menus" href="#">Reubicar</a></li>
+                    <hr> 
+                    <li><a id="menus" href="#">Comentar</a></li>
+                    <hr> 
+                    <li><a id="menus" href="#">Ajustar</a></li>
+                    <hr>
+                    </ul>
+                </li>
+                <li><a id="menus" href="#"><img src="../Iconos/ver.png"  class="centrado" width="30px"  />Ver </a>
+                    <ul>
+                    <li><a id="menus" href="#">Previsualizacion</a></li>
+                    <hr> 
+                    <li><a id="menus" href="#">Vista Preliminar</a></li>
+                    <hr>
+                    </ul>
+                </li>
+                <li><a id="menus" href="#" ><img src="../Iconos/mod2.png" class="centrado" width="30px"  />Modulos</a>
+                    <ul>
+                    <li ><a id="menus" href="#">Gestion </a>
+                        <hr>
+                         <ul>
+                                <li><a id="menus" href="#">General</a></li>
+                                <hr> 
+                                <li><a id="menus" href="registro.html" target="ventana_iframe">Usuario</a></li>
+                                <hr> 
+                                <li><a id="menus" href="#">Seguridad</a></li>
+                                <hr> 
+
+                            </ul>
+                        </li>
+                    <li><a id="menus" href="#">Documentos</a>
+
+                        <hr><ul>
+                                <li><a id="menus" href="#">Nuevo documento</a></li>
+                                <hr> 
+                                <li><a id="menus" href="Actualizar.html" target="ventana_iframe">Actualizar Documento</a></li>
+                                <hr> 
+                                <li><a id="menus" href="#">Metadatos</a></li>
+                                <hr>
+                                <li><a id="menus" href="retencion.html" target="ventana_iframe">Retención</a></li>
+                                <hr>
+                        </ul>
+                        </li>
+                    <li><a id="menus" href="Anexos.html" target="ventana_iframe">Anexos</a></li>
+                    </ul>    
+                </li>                            
+                <!--<li><a href="#">Herramientas</a></li>-->
+                <li><a id="menus" href="#"><img src="../Iconos/vent.png" class="centrado" width="30px"  />Ventanas</a>
+                    <ul>
+                    <li><a id="menus" href="#">Duplicar Ventana </a></li>
+                    <hr> 
+                    <li><a id="menus" href="#">Vista paralela </a></li>
+                    <hr> 
+                    <li><a id="menus" href="#">Minimizar ventanas</a></li>
+                    <hr>
+                    </ul>
+                </li>
+                <li><a id="menus" href="#"><img src="../Iconos/help.png" class="centrado" width="30px"  />Ayuda</a>
+                <ul>
+                    <li><a id="menus" href="#">Manual del Usuario F1 </a></li>
+                    <hr>
+                </ul>
+                </li>
+                <li>
+                <a id="menus" href="busquedas.html" target="ventana_iframe"><img src="../Iconos/buscar.png" class="centrado" width="30px"  /></a>
+                       <ul>
+                    <li> <input name="buscar" id="buscar" type="text" class="buscar" placeholder="Buscar Documento"></li>
+                    <hr>
+                </ul>
+                </li>
+                </ul>
+
+                </nav>
+            
+        </header>
+        <iframe id="frame" name="ventana_iframe" scrolling="auto" >
+        </iframe>
+    </body>
+    <script language="JavaScript"> 
+function pregunta(){ 
+    if (confirm('¿Estas seguro que deseas cerrar sesión?')){
+       document.usuario.salir() 
+    } 
+    return false; 
+} 
+</script> 
+</html>
