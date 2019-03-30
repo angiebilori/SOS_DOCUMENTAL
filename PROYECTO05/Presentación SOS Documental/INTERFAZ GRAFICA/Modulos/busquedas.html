@@ -1,0 +1,46 @@
+<DOCTYPE html>
+<html>
+    <head>
+        <title>BÚSQUEDAS - SOS</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <link type="text/css" href="../Css/Estilos/busquedas.css" rel="stylesheet">
+    </head>
+    <body>
+        <form name="loginform" id="loginform" method="post" action="validar.jsp"> 
+        
+            <div name="titulo" id="titulo">BÚSQUEDAS</div>
+
+            <table id="cuerpo">
+
+                <tr>
+                    <td id="textDoc" name="textDoc">
+                        Nombre del documento
+                    </td>   
+                    <td id="nomDocumento">
+                         <input name ="nomDocumento" type="text" placeholder="Búscar" autofocus required id="doc">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td id="textFec">
+                       Fecha de .... 
+                    </td> 
+                    <td  id="fecha">
+                        <input type="date" name="fecha" id="fec" >
+                    </td>                
+                </tr>
+
+                <tr id="pie">
+                    <td>
+                        
+                    </td>
+                </tr>
+            </table>
+
+            <div id="titulo">
+                <input type="submit" name="submit" id="btnBuscar" value="Búscar" >
+            </div>
+            
+        </form>
+    </body>
+</html>
