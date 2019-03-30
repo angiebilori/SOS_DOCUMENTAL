@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+	   <title>
+		  Registro de usuarios
+	   </title>
+        <link type="text/css" href="../Css/Estilos/registro.css" rel="stylesheet" media="Screen"/>
+    </head>
+	<body>
+		<table id="cuerpo">
+            <tr id="titulo">
+                <td colspan="2">
+                Registro de usuarios
+                </td>
+            </tr>
+            <tr>
+                <td id="subtitulos">
+                    N&uacute;mero de cedula
+                </td>
+                <td id="text">
+                    <input type="number" name="cedula" required placeholder="C&eacute;dula">
+                </td>
+            </tr>
+            <tr>
+                <td id="subtitulos">
+                    Primer nombre
+                </td>
+                    <td>
+                        <input  name="primNombre" type="text" required placeholder="Primer nombre">
+                    </td>
+            </tr>
+            <tr>
+                <td id="subtitulos">
+                    Segundo nombre
+                </td>
+                    <td id="text">
+                        <input type="text" name="segNombre" required placeholder="Segundo nombre">
+                    </td>
+            </tr>
+            <tr>
+                <td id="subtitulos">
+                    Primer apellido
+                </td>
+                    <td id="text">
+                        <input type="text" name="primApellido" required placeholder="Primer apellido">
+                    </td>
+            </tr>
+            <tr>
+                <td id="subtitulos">
+                    Segundo apellido
+                </td>
+                    <td id="text">
+                        <input type="text" name="segApellido" required placeholder="Segundo apellido">
+                    </td>
+            </tr>
+            <tr>
+                <td id="subtitulos">
+                    Correo
+                </td>
+                    <td id="text">
+                        <input type="select" name="correo" required placeholder="Correo">
+                    </td>
+            </tr>
+            <tr>
+                <td id="subtitulos">
+                    Rol
+                </td>
+                <td>
+                    <select name="rol" required> 
+                        <option value="1">Coordinador</option>
+                        <option value="2">Jefe</option>
+                        <option value="3">Operario</option> 
+                    </select>
+                </td>
+            </tr>
+            <tr id="boton">
+                <td>
+                    <input type="submit" id="botones" VALUE="Registrar" >    
+                </td>
+                <td>
+                <input type="submit" id="botones" value="Cancelar">
+                </td>
+            </tr>
+        </table>
+	</body>
+</html>
