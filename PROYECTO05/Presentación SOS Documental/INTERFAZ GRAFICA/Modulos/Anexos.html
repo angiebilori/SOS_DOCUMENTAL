@@ -1,0 +1,85 @@
+<html>
+    <head>
+        <title>Anexos - SOS</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <link type="text/css" href="../Css/Estilos/anexos.css" rel="stylesheet">
+        <body>
+            <script>
+
+function processFiles(files) {
+var file = files[0];
+
+var reader = new FileReader();
+
+reader.onload = function (e) {
+// Cuando éste evento se dispara, los datos están ya disponibles.
+// Se trata de copiarlos a una área <div> en la página.
+var output = document.getElementById("fileOutput"); 
+fileOutput.style.backgroundImage= "url('" + e.target.result + "')";
+};
+reader.readAsDataURL(file);
+}
+
+</script>
+                
+            <div id="titulo">ANEXOS</div>
+                <center>
+                <table id="cuerpo"border="1px"> 
+        
+                <tr>
+                <td id="Anexo1">
+<!--                <form id="Anexos" method="post" action="processFiles(files)" enctype="multipart/form-data">-->
+                <input id="files" type="file"  size="50" onchange="processFiles(this.files)" name="files[]" multiple><br />
+              <!--  <center><input id="enviar" type="submit" value="Enviar" /></center>
+                </form>-->
+                    <output id="list"></output>
+                    </td>
+                
+                <td ><strong>Previsualizacion</strong>
+<!--                    <embed src="" type="application/pdf" width="800" height="600">-->
+                  <!--  <iframe id="frame" name="ventana_iframe2" scrolling="yes" >
+                    </iframe>-->
+                    <div id="fileOutput">
+                    
+                    
+                    </div>
+                    </td>
+                </tr>
+                  <tr>
+                <td id="Anexo1">
+<!--                    <input type="file" id="files" name="files[]" multiple />-->
+                    
+
+
+                    </td>
+                </tr>
+ 
+          <script>
+  function handleFileSelect(evt) {
+    var files = evt.target.files; // FileList object
+
+    // files is a FileList of File objects. List some properties.
+    var output = [];
+    for (var i = 0, f; f = files[i]; i++) {
+      output.push('<li><strong>', escape(f.name), '</strong> (', f.type || 'n/a', ') - ',
+                  f.size, ' bytes, last modified: ',
+                  f.lastModifiedDate.toLocaleDateString(), '</li>');
+    }
+    document.getElementById('list').innerHTML = '<ul>' + output.join('') + '</ul>';
+  }
+
+  document.getElementById('files').addEventListener('change', handleFileSelect, false);
+</script>
+                </table>
+                </center>
+                <center>
+                    <div id="boton">
+                    <input type="submit" name="submit" id="btnBuscar" value="Subir" >
+                </div>
+                </center>
+                
+                         
+              
+        </body>
+    </head>
+</html>
