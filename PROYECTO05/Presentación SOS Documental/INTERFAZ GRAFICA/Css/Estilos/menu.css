@@ -1,0 +1,44 @@
+body{
+    background: -webkit-linear-gradient(top,#F3FCFF, #FDF9F2); /*Degradar los colores*/
+    margin: 0;
+}
+#cuerpo{
+
+    padding:0px;/*margen*/
+    cursor:pointer;
+   
+    /*Centrar formulario*/
+    margin-left: 0%; 
+    margin-right: 0%;
+    margin-top: 0%;
+
+    width: 100%; /*Ancho caja text 100% todo lo ancho de una pantalla*/
+}
+#usuario{
+    text-align: center;
+    background-color: white;
+    width: 15%;
+}
+#logo{
+    height: 120px;
+    background:#ffffff url(logo.png) no-repeat center;
+    background-size: 100%;
+}
+
+#cajascabecera{
+
+    border-radius:5px; /*probar con 10px se hacen ovalados los inputs*/
+    box-shadow: 2px 2px 4px 0px rgba(0,0,0,.8); /*Profundidad*/
+    background: -webkit-linear-gradient(top,#F3FCFF, #8ACED7); /*Degradar los colores*/
+    height: 50px; /*Alto caja text*/
+    text-align: center;
+    font:bold 18px Arial, Helvetica, sans-serif; /*Tipo letra*/
+}
+#frame{
+    margin-width: 0px;
+    margin-height: 0px;  
+    border: 0px; 
+    border: 0px;
+    width: 100%; 
+    height:700px;
+}
