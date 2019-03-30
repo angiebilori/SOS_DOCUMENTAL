@@ -1,0 +1,86 @@
+body{
+    background: -webkit-linear-gradient(top,#F3FCFF, #FDFf9F2); /*Degradar los colores*/
+    
+    margin: 0;
+}
+#cuerpo{
+
+    padding:5px;/*margen*/
+    cursor:pointer;
+   
+    /*Centrar formulario*/
+    margin-left: auto; 
+    margin-right: auto;
+    margin-top: 3%; /*Margen superior*/
+
+    border-radius:5px; /*probar con 10px se hacen ovalados los inputs*/
+    box-shadow: 2px 2px 4px 0px rgba(0,0,0,.8); /*Profundidad*/
+    background: -webkit-linear-gradient(top,#F3FCFF, #8ACED7); /*Degradar los colores*/
+    height: 150px; /*Alto caja text*/
+    width: 60%; /*Ancho de la caja*/
+    border:0px;
+}
+#titulo{
+    margin-top: 20px;/*Margen superior*/
+    font-family:"Myriad Pro", Arial Bold; /*Tipo letra*/
+    font-size: 25px; /* Tamaño Letra*/
+    font-style: italic;/*Estilo letra*/
+    text-align: center;/*Centrar texto*/
+}
+input#archivo{
+    
+}
+input#enviar{
+    margin-top: 30px;
+    border-radius:5px; /*probar con 10px se hacen ovalados los inputs*/
+    box-shadow: 2px 2px 5px 1px rgba(0,0,0,.8); /*Profundidad*/
+    font-family:"Myriad Pro", Arial Bold; /*Tipo letra*/
+    font-size: 0.8em  ; /* Tamaño Letra*/
+    font-style: italic;/*Estilo letra*/ /*Tipo letra*/
+    height: 3.5vh   ; /*Alto caja text*/
+    width: 10vw  ; /*Ancho caja text*/
+    background: -webkit-linear-gradient(top, #BD6A07 0%,  #F9F22B 20%, #D9B661 50%, #FFFFFF 60%, #D8AB3D 70%, #724612 100%); /*Degradar los colores*/
+    color: #000; /*Color del texto*/
+}
+input#btnBuscar{
+    margin-top: 5px;
+    border-radius:5px; /*probar con 10px se hacen ovalados los inputs*/
+    box-shadow: 2px 2px 3px 1px rgba(0,0,0,.8); /*Profundidad*/
+    font-family:"Myriad Pro", Arial Bold; /*Tipo letra*/
+    font-size: 0.8em  ; /* Tamaño Letra*/
+    font-style: italic;/*Estilo letra*/ /*Tipo letra*/
+    height: 3.5vh   ; /*Alto caja text*/
+    width: 10vw  ; /*Ancho caja text*/
+    background: -webkit-linear-gradient(top, #BD6A07 0%,  #F9F22B 20%, #D9B661 50%, #FFFFFF 60%, #D8AB3D 70%, #724612 100%); /*Degradar los colores*/
+    color: #000; /*Color del texto*/
+}
+input#btnBuscar:hover{/*este se utiliza para cambiar el color al seleccionar*/
+    background: -webkit-linear-gradient(top, #D69F5D 0%,  #FFFB7E 20%, #F2D899 50%, #FFFFFF 60%, #F7CD65 70%, #A96F2A 100%);;
+     color:#000;
+}
+#btn{
+    text-align: center;/*Centrar boton*/
+}
+#fileOutput{
+    margin-top: 30px;
+border: solid 1px black;
+padding: 5px;
+width: 60vw;
+height: 80vw;
+background: lightyellow;
+background-size: 100%;
+background-repeat: no-repeat;
+text-align: center;
+}
+/*#frame{  opciones de margen del frame de las demas ventanas
+    margin-width: 0px;
+    margin-height: 0px;  
+    border: 0px; 
+    border: 0px;
+    width: 300px; 
+    height:400px;
+    background: lightyellow;
+background-size: 100%;
+background-repeat: no-repeat;
+text-align: center;
+} */ 
