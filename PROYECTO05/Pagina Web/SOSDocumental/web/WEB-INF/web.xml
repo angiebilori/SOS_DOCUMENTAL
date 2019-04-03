@@ -20,6 +20,10 @@
         <servlet-name>restaurarContrasenaServlet</servlet-name>
         <servlet-class>controller.restaurarContrasenaServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>envioARestaurarContraServlet</servlet-name>
+        <servlet-class>controller.envioARestaurarContraServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>autenticar</servlet-name>
         <url-pattern>/iniciar</url-pattern>
@@ -39,6 +43,10 @@
     <servlet-mapping>
         <servlet-name>restaurarContrasenaServlet</servlet-name>
         <url-pattern>/restaurarContrasena</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>envioARestaurarContraServlet</servlet-name>
+        <url-pattern>/envioARestaurarContra</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

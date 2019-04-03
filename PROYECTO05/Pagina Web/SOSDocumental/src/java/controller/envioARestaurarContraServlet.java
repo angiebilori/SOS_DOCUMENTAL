@@ -1,6 +1,7 @@
 package controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -10,19 +11,27 @@ import javax.servlet.http.HttpSession;
 /**
  * @author Einer
  */
-public class cerrarSesionServlet extends HttpServlet {
+public class envioARestaurarContraServlet extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
 
-        HttpSession sesion = request.getSession();//Obtiene la sesion
-        sesion.removeAttribute("usuario");//Remueve el usuario
-        sesion.removeAttribute("restaurar");//Remueve el usuario
-        autenticarServlet.nombre = "";
-        autenticarServlet.apellido = "";
-        autenticarServlet.rol = "";
-        response.sendRedirect("autenticacion.jsp"); //redirige a autenticar
+        String restaurar = "res";
+        boolean envio = false;
+        try {
+
+            HttpSession objetosesion = request.getSession(true);
+            objetosesion.setAttribute("restaurar", restaurar);
+            
+            envio = true;
+        } catch (Exception e) {
+
+        }
+        if (envio) {
+            response.sendRedirect("restaurarContrasena.jsp"); //Si es verdadero nos envia a el menu jsp
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

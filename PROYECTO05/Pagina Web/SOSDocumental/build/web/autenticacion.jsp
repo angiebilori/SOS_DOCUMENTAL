@@ -8,6 +8,10 @@
 <%
     HttpSession objsesion = request.getSession(false); //Obtener la sesion iniciada"false"
     String usuario = (String) objsesion.getAttribute("usuario"); //Obtenermos los datos del objeto
+
+    HttpSession sesion = request.getSession();//Obtiene la sesion
+    sesion.removeAttribute("restaurar");//Remueve el usuario
+
     if (usuario != null) {//Si los datos obtenidos son nulos o no hay datos, redireccionamos a lapagina de Autenticacion
         response.sendRedirect("menu.jsp");
     }
@@ -40,7 +44,7 @@
                             <%}%></label>
                     </div>
                     <div id="piepg">
-                        <a href="restaurarContrasena.jsp">Restaurar contraseña</a> 
+                        <a href="envioARestaurarContra">Restaurar contraseña</a> 
                     </div>
                 </div>                 
             </form>

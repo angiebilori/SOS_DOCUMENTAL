@@ -1,8 +1,15 @@
 package model;
 
 import controller.autenticarServlet;
+import java.io.InputStream;
+import java.sql.Blob;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+
+//Para obtener la fecha y hora
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class Consultas extends Conexion {
 
@@ -14,9 +21,31 @@ public class Consultas extends Conexion {
         //System.out.println(co.cargarregistros());
         //System.out.println(co.contarfilas());
         //System.out.println(co.datosUsuario(1030647444));
-        System.out.println(co.restaurarContrasena(1030647666, "123"));
+        //System.out.println(co.restaurarContrasena(1030647666, "123"));
+        //System.out.println(co.obtenerFechaHora());
+        //System.out.println(co.registrarSesion(1030647666, "2019/03/06 19:40:50"));
     }
 
+    /*
+    public boolean obtenerFechaHora() {
+        try {
+            Date date = new Date();
+            //Caso 1: obtener la hora y salida por pantalla con formato:
+            DateFormat hourFormat = new SimpleDateFormat("HH:mm:ss");
+            System.out.println("Hora: " + hourFormat.format(date));
+            //Caso 2: obtener la fecha y salida por pantalla con formato:
+            DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
+            System.out.println("Fecha: " + dateFormat.format(date));
+            //Caso 3: obtenerhora y fecha y salida por pantalla con formato:
+            DateFormat hourdateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss ");
+            System.out.println("Hora y fecha: " + hourdateFormat.format(date));
+            return true;
+        } catch (Exception e) {
+
+        }
+        return false;
+    }
+     */
     //extends: Ereda todo los metodos(TODO) de la clase conexion
     public boolean autenticacion(int usuario, String password) {
         PreparedStatement pst = null;
@@ -42,6 +71,36 @@ public class Consultas extends Conexion {
                 }
                 if (rs != null) {
                     rs.close();
+                }
+            } catch (Exception e) {
+                System.out.println("Error: " + e);
+            }
+        }
+        return false;
+    }
+
+    public boolean registrarSesion(int idUsusario, String fechaSesion) {
+        PreparedStatement pst = null;
+        try {
+            String registro = "insert into Sesion (idSesion, idUsuario, fechaSesion) Values(?,?,?)";
+            pst = getConexion().prepareStatement(registro);
+
+            pst.setInt(1, 0);
+            pst.setInt(2, idUsusario);
+            pst.setString(3, fechaSesion);
+
+            if (pst.executeUpdate() == 1) {
+                return true;
+            }
+        } catch (Exception e) {
+            System.out.println("Error: " + e);
+        } finally {
+            try {
+                if (getConexion() != null) {
+                    getConexion().close();
+                }
+                if (pst != null) {
+                    pst.close();
                 }
             } catch (Exception e) {
                 System.out.println("Error: " + e);
@@ -192,6 +251,38 @@ public class Consultas extends Conexion {
         return false;
     }
 
+    public boolean registrarPdf(int idDocumento, String codigo, String nomDocumento, String fechaRegistro, int idUsuario, InputStream documento) {
+        PreparedStatement pst = null;
+        try {
+            String registro = "insert into Documento (idDocumento, codigo, nomDocumento, fechaRegistro, idUsuario, documento) Values(?,?,?,?,?,?);";
+            pst = getConexion().prepareStatement(registro);
+
+            pst.setInt(1, idDocumento);
+            pst.setString(2, codigo);
+            pst.setString(3, nomDocumento);
+            pst.setString(4, fechaRegistro);
+            pst.setInt(5, idUsuario);
+            pst.setBlob(6, documento);
+
+            if (pst.executeUpdate() == 1) {
+                return true;
+            }
+        } catch (Exception e) {
+            System.out.println("Error: " + e);
+        } finally {
+            try {
+                if (getConexion() != null) {
+                    getConexion().close();
+                }
+                if (pst != null) {
+                    pst.close();
+                }
+            } catch (Exception e) {
+                System.out.println("Error: " + e);
+            }
+        }
+        return false;
+    }
     /*
     public boolean consultaupdate(String doc) {
         PreparedStatement pst = null;
