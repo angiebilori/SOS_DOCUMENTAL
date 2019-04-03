@@ -1,0 +1,133 @@
+create database sos_documental;
+
+USE sos_documental;
+
+create table Rol(IdRol int (45)not null, ValDocumento tinyint not null, Jefe varchar (45) not null, Cordinador varchar (45) not null, Operario varchar(45)not null, primary key (IdRol))ENGINE=InnoDB;
+
+create table Usuario(Usuario varchar(45)not null, Password varchar (45)not null, primary key (Usuario))ENGINE=InnoDB;
+
+create table Registro(Idusuario int (45)not null, primNombre varchar(45)not null,  segNombre varchar(45) null,  primApellido varchar(45)not null, segApellido varchar(45)not null, Email varchar (45) not null,Rol varchar (45)not null,IdRol int (45)not null, Usuario varchar (45)not null,primary key (Idusuario), INDEX `fk_registro_rol1_idx` (`IdRol` ASC), INDEX `fk_registro_usuario1_idx` (`Usuario` ASC), FOREIGN KEY(IdRol) REFERENCES rol (IdRol), FOREIGN KEY(Usuario) REFERENCES Usuario (Usuario))ENGINE=InnoDB;
+
+create table Descarga (IdDescarga int (45)not null auto_increment, FechaDescarga varchar(45) null,primary key (IdDescarga));
+
+create table ActualizacionDeDatos(IdActualizacion int (45)not null auto_increment, FechaActualizacion datetime null,IdDescarga int (45)not null, primary key(IdActualizacion), INDEX `fk_ActualizacionDeDatos_Descarga1_idx` (`IdDescarga` ASC), foreign key(IdDescarga) references Descarga(IdDescarga))engine=innodb;
+
+create table Anexos (Idanexo int(45)not null auto_increment, FechaAnexo datetime not null,IdActualizacion int (45)not null, IdDescarga int (45)not null, primary key (IDanexo), INDEX `fk_anexos_actualizaciondedatos1_idx` (`IdActualizacion` ASC, `iddescarga` ASC), FOREIGN KEY (IdActualizacion) references ActualizacionDeDatos(IdActualizacion), FOREIGN KEY (IdDescarga) references Descarga(IdDescarga)) engine=innodb;
+
+create table Busqueda_Documento(IdBusqueda int (45)not null auto_increment, FechaDocumento datetime not null,Usuario varchar (45)not null, primary key(IdBusqueda), index`fl_Busqueda_Documento_Usuario1_idx`(`Usuario` ASC), foreign key (Usuario) references Usuario(Usuario))engine=innodb;
+
+create table Documento(IdDocumento int(50)not null, TipoDocumento varchar(45)not null, fechaDocumento datetime not null, IdDescarga int (45)not null, IdBusqueda int (45)not null, Usuario varchar(45)not null, primary key (IdDocumento), index`fk_Documento_Descarga1_idx`(`IdDescarga` ASC), index`fk_Documento_Busqueda_Documento1_idx`(`IdBusqueda` ASC,`Usuario` ASC), FOREIGN KEY (IdBusqueda) references Busqueda_Documento(IdBusqueda), FOREIGN KEY (IdDescarga) references Descarga(IdDescarga), FOREIGN KEY (Usuario) references Usuario(Usuario))engine=innodb;
+
+create table Metadatos(codigo int (15)not null, PesoDocumento varchar (45)not null, IdDocumento int (50)not null, idDescarga int(45)not null, primary key (codigo), index`fk_Metadatos_Documento1_idx`(`IdDescarga` ASC,`IdDocumento` ASC), FOREIGN KEY (IdDocumento) references Documento(IdDocumento), FOREIGN KEY (IdDescarga) references Descarga(IdDescarga))engine=innodb;
+
+create table MovimientosDocumentos(IdMovimientosDocumentos int (45)not null auto_increment, DocumentosAgregados varchar(45)not null, DocumentosEliminados varchar(45)not null, codigo int (15)not null, primary key (IdMovimientosDocumentos), index`fk_MovimientosDocumentos_Metadatos1_idx`(`codigo` ASC), FOREIGN KEY (codigo) references Metadatos(codigo))engine=innodb;
+
+create table Administrador(IdAdministrador int (45)not null, PasswordAdmi varchar(45)not null, Idusuario int (45) not null, primary key (IdAdministrador), index`fk_Administrador_Registro1_idx`(`IdUsuario` ASC), FOREIGN KEY (Idusuario) references Registro(Idusuario))engine=innodb;
+
+create table Reporte (VecesDocActualizado int(100) not null auto_increment, VecesIngreso int (100)not null, VecesDescargados int (100)not null, IdAdministrador int (45)not null, Idusuario int (45)not null, primary key (VecesDocActualizado), index`fk_Reporte_Administrador1_idx`(`IdAdministrador` ASC,`Idusuario` ASC), FOREIGN KEY (IdAdministrador) references administrador(IdAdministrador), FOREIGN KEY (IdUsuario) references Registro(Idusuario))engine=innodb;
+
+create table Permisos(Idpermisos int (45)not null,PermisosCarga tinyint not null,PermisosCarpetas tinyint not null,IdAdministrador int (45)not null,Idusuario int (45)not null,primary key (Idpermisos));
+
+create table Retencion(IdVigencia int (45)not null auto_increment, VigenciaDocumento datetime not null,IdDocumento int (50) not null,IdDescarga int (45) not null, primary key (IdVigencia)); alter table Permisos add foreign key (IdAdministrador) references Administrador(IdAdministrador);
+
+alter table Permisos add foreign key (IdUsuario) references Registro(IdUsuario);
+
+alter table Retencion add foreign key (IdDocumento) references Documento(IdDocumento);
+
+alter table Retencion add foreign key (IdDescarga) references Descarga(IdDescarga);
+
+show columns from Busqueda_Documento;
+
+
+INSERT INTO `sos_documental`.`usuario` (`Usuario`, `Password`) VALUES (&#39;1&#39;, &#39;123&#39;);
+INSERT INTO `sos_documental`.`usuario` (`Usuario`, `Password`) VALUES (&#39;2&#39;, &#39;456&#39;);
+INSERT INTO `sos_documental`.`usuario` (`Usuario`, `Password`) VALUES (&#39;3&#39;, &#39;789&#39;);
+INSERT INTO `sos_documental`.`rol` (`IdRol`, `ValDocumento`, `Jefe`, `Cordinador`,
+`Operario`) VALUES (&#39;1221&#39;, &#39;1&#39;, &#39;camilo&#39;, &#39;angie&#39;, &#39;pepita&#39;);
+INSERT INTO `sos_documental`.`rol` (`IdRol`, `ValDocumento`, `Jefe`, `Cordinador`,
+`Operario`) VALUES (&#39;1222&#39;, &#39;0&#39;, &#39;diana&#39;, &#39;andrea&#39;, &#39;andres&#39;);
+INSERT INTO `sos_documental`.`rol` (`IdRol`, `ValDocumento`, `Jefe`, `Cordinador`,
+`Operario`) VALUES (&#39;1223&#39;, &#39;1&#39;, &#39;carmelo&#39;, &#39;sebastian&#39;, &#39;carlos&#39;);
+INSERT INTO `sos_documental`.`registro` (`Idusuario`, `NombreUsuario`, `Email`, `Rol`,
+`IdRol`, `Usuario`) VALUES (&#39;1021205&#39;, &#39;angie&#39;, &#39;angie@misena.edu&#39;, &#39;cordinador&#39;, &#39;1222&#39;, &#39;2&#39;);
+UPDATE `sos_documental`.`registro` SET `Rol`=&#39;jefe&#39; WHERE `Idusuario`=&#39;1073719518&#39;;
+INSERT INTO `sos_documental`.`registro` (`Idusuario`, `NombreUsuario`, `Email`, `Rol`,
+
+`IdRol`, `Usuario`) VALUES (&#39;1204584&#39;, &#39;camilo&#39;, &#39;camilo@misena&#39;, &#39;operario&#39;, &#39;1223&#39;, &#39;3&#39;);
+INSERT INTO `sos_documental`.`registro` (`Idusuario`, `NombreUsuario`, `Email`, `Rol`,
+`IdRol`, `Usuario`) VALUES (&#39;1&#39;, &#39;johan&#39;, &#39;johan@gmail&#39;, &#39;jefe&#39;, &#39;1221&#39;, &#39;1&#39;);
+INSERT INTO `sos_documental`.`registro` (`Idusuario`, `NombreUsuario`, `Email`, `Rol`,
+`IdRol`, `Usuario`) VALUES (&#39;2&#39;, &#39;diana&#39;, &#39;dm@gmail&#39;, &#39;operario&#39;, &#39;1223&#39;, &#39;2&#39;);
+INSERT INTO `sos_documental`.`registro` (`Idusuario`, `NombreUsuario`, `Email`, `Rol`,
+`IdRol`, `Usuario`) VALUES (&#39;3&#39;, &#39;marcela&#39;, &#39;marcela@gmail&#39;, &#39;operario&#39;, &#39;1223&#39;, &#39;3&#39;);
+
+INSERT INTO `sos_documental`.`descarga` (`IdDescarga`, `FechaDescarga`) VALUES (&#39;12&#39;,
+&#39;2015/02/20&#39;);
+INSERT INTO `sos_documental`.`descarga` (`IdDescarga`, `FechaDescarga`) VALUES (&#39;13&#39;,
+&#39;2016/06/26&#39;);
+INSERT INTO `sos_documental`.`descarga` (`IdDescarga`, `FechaDescarga`) VALUES (&#39;14&#39;,
+&#39;2020/05/20&#39;);
+INSERT INTO `sos_documental`.`actualizaciondedatos` (`IdActualizacion`,
+`FechaActualizacion`, `IdDescarga`) VALUES (&#39;123&#39;, &#39;2018/12/03&#39;, &#39;12&#39;);
+INSERT INTO `sos_documental`.`actualizaciondedatos` (`IdActualizacion`,
+`FechaActualizacion`, `IdDescarga`) VALUES (&#39;124&#39;, &#39;2017/05/08&#39;, &#39;13&#39;);
+INSERT INTO `sos_documental`.`actualizaciondedatos` (`IdActualizacion`,
+`FechaActualizacion`, `IdDescarga`) VALUES (&#39;125&#39;, &#39;2016/0/12&#39;, &#39;14&#39;);
+
+INSERT INTO `sos_documental`.`anexos` (`Idanexo`, `FechaAnexo`, `IdActualizacion`,
+`IdDescarga`) VALUES (&#39;21&#39;, &#39;2018/12/03&#39;, &#39;123&#39;, &#39;12&#39;);
+INSERT INTO `sos_documental`.`anexos` (`Idanexo`, `FechaAnexo`, `IdActualizacion`,
+`IdDescarga`) VALUES (&#39;19&#39;, &#39;2017/05/08&#39;, &#39;124&#39;, &#39;13&#39;);
+INSERT INTO `sos_documental`.`anexos` (`Idanexo`, `FechaAnexo`, `IdActualizacion`,
+`IdDescarga`) VALUES (&#39;15&#39;, &#39;2016/0/12&#39;, &#39;125&#39;, &#39;14&#39;);
+
+INSERT INTO `sos_documental`.`busqueda_documento` (`IdBusqueda`, `FechaDocumento`,
+`Usuario`) VALUES (&#39;210&#39;, &#39;2000/02/14&#39;, &#39;1&#39;);
+INSERT INTO `sos_documental`.`busqueda_documento` (`IdBusqueda`, `FechaDocumento`,
+`Usuario`) VALUES (&#39;190&#39;, &#39;2014/05/12&#39;, &#39;2&#39;);
+INSERT INTO `sos_documental`.`busqueda_documento` (`IdBusqueda`, `FechaDocumento`,
+`Usuario`) VALUES (&#39;150&#39;, &#39;2016/08/25&#39;, &#39;3&#39;);
+
+INSERT INTO `sos_documental`.`documento` (`IdDocumento`, `TipoDocumento`,
+`fechaDocumento`, `IdDescarga`, `IdBusqueda`, `Usuario`) VALUES (&#39;2119&#39;, &#39;pdf&#39;, &#39;2000/02/15&#39;,
+
+&#39;12&#39;, &#39;210&#39;, &#39;1&#39;);
+INSERT INTO `sos_documental`.`documento` (`IdDocumento`, `TipoDocumento`,
+`fechaDocumento`, `IdDescarga`, `IdBusqueda`, `Usuario`) VALUES (&#39;1921&#39;, &#39;txt&#39;, &#39;2014/05/11&#39;,
+&#39;13&#39;, &#39;190&#39;, &#39;2&#39;);
+INSERT INTO `sos_documental`.`documento` (`IdDocumento`, `TipoDocumento`,
+`fechaDocumento`, `IdDescarga`, `IdBusqueda`, `Usuario`) VALUES (&#39;1503&#39;, &#39;xlsx&#39;,
+&#39;2016/08/24&#39;, &#39;14&#39;, &#39;150&#39;, &#39;3&#39;);
+
+INSERT INTO `sos_documental`.`metadatos` (`codigo`, `PesoDocumento`, `IdDocumento`,
+`idDescarga`) VALUES (&#39;1203&#39;, &#39;64bits&#39;, &#39;2119&#39;, &#39;12&#39;);
+INSERT INTO `sos_documental`.`metadatos` (`codigo`, `PesoDocumento`, `IdDocumento`,
+`idDescarga`) VALUES (&#39;1204&#39;, &#39;65bits&#39;, &#39;1921&#39;, &#39;13&#39;);
+INSERT INTO `sos_documental`.`metadatos` (`codigo`, `PesoDocumento`, `IdDocumento`,
+`idDescarga`) VALUES (&#39;1205&#39;, &#39;70bits&#39;, &#39;1503&#39;, &#39;14&#39;);
+
+INSERT INTO `sos_documental`.`movimientosdocumentos` (`IdMovimientosDocumentos`,
+`DocumentosAgregados`, `DocumentosEliminados`, `codigo`) VALUES (&#39;123&#39;, &#39;12&#39;, &#39;2&#39;, &#39;1203&#39;);
+INSERT INTO `sos_documental`.`movimientosdocumentos` (`IdMovimientosDocumentos`,
+`DocumentosAgregados`, `DocumentosEliminados`, `codigo`) VALUES (&#39;1234&#39;, &#39;13&#39;, &#39;3&#39;, &#39;1204&#39;);
+INSERT INTO `sos_documental`.`movimientosdocumentos` (`IdMovimientosDocumentos`,
+`DocumentosAgregados`, `DocumentosEliminados`, `codigo`) VALUES (&#39;12345&#39;, &#39;14&#39;, &#39;4&#39;,
+&#39;1205&#39;);
+INSERT INTO `sos_documental`.`administrador` (`IdAdministrador`, `PasswordAdmi`,
+`Idusuario`) VALUES (&#39;123&#39;, &#39;123&#39;, &#39;1&#39;);
+
+INSERT INTO `sos_documental`.`reporte` (`VecesDocActualizado`, `VecesIngreso`,
+`VecesDescargados`, `IdAdministrador`, `Idusuario`) VALUES (&#39;12&#39;, &#39;12&#39;, &#39;20&#39;, &#39;123&#39;, &#39;1021205&#39;);
+INSERT INTO `sos_documental`.`permisos` (`Idpermisos`, `PermisosCarga`,
+`PermisosCarpetas`, `IdAdministrador`, `Idusuario`) VALUES (&#39;1&#39;, &#39;1&#39;, &#39;1&#39;, &#39;123&#39;, &#39;1021205&#39;);
+INSERT INTO `sos_documental`.`permisos` (`Idpermisos`, `PermisosCarga`,
+`PermisosCarpetas`, `IdAdministrador`, `Idusuario`) VALUES (&#39;2&#39;, &#39;0&#39;, &#39;1&#39;, &#39;123&#39;, &#39;1204584&#39;);
+INSERT INTO `sos_documental`.`permisos` (`Idpermisos`, `PermisosCarga`,
+`PermisosCarpetas`, `IdAdministrador`, `Idusuario`) VALUES (&#39;3&#39;, &#39;1&#39;, &#39;1&#39;, &#39;123&#39;, &#39;1&#39;);
+INSERT INTO `sos_documental`.`retencion` (`IdVigencia`, `VigenciaDocumento`,
+`IdDocumento`, `IdDescarga`) VALUES (&#39;12&#39;, &#39;2020/12/20&#39;, &#39;1503&#39;, &#39;12&#39;);
+
+INSERT INTO `sos_documental`.`retencion` (`IdVigencia`, `VigenciaDocumento`,
+`IdDocumento`, `IdDescarga`) VALUES (&#39;13&#39;, &#39;2019/12/23&#39;, &#39;1921&#39;, &#39;13&#39;);
+INSERT INTO `sos_documental`.`retencion` (`IdVigencia`, `VigenciaDocumento`,
+`IdDocumento`, `IdDescarga`) VALUES (&#39;14&#39;, &#39;2018/05/25&#39;, &#39;2119&#39;, &#39;14&#39;);
