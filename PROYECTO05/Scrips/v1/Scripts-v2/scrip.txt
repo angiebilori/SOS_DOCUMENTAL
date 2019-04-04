@@ -1,0 +1,127 @@
+create database sos_documental;
+
+USE sos_documental;
+
+CREATE TABLE Rol(
+idRol INT(5) NOT NULL AUTO_INCREMENT,
+cargo VARCHAR(45) NOT NULL,
+PRIMARY KEY (idRol))ENGINE = InnoDB;
+
+CREATE TABLE Usuario(
+idUsuario INT(20) NOT NULL,
+primNombre VARCHAR(45) NOT NULL,
+segNombre VARCHAR(45) NULL,
+primApellido VARCHAR(45) NOT NULL,
+segApellido VARCHAR(45) NOT NULL,
+email VARCHAR(50) NOT NULL,
+idRol INT(5) NOT NULL,
+password VARBINARY(35) NOT NULL,
+PRIMARY KEY (idUsuario),
+INDEX rol(idRol),
+FOREIGN KEY(idRol) REFERENCES Rol(idRol))ENGINE = InnoDB;
+
+CREATE TABLE Documento (
+idDocumento INT(30) NOT NULL,
+
+nomDocumento VARCHAR(100) NOT null,
+
+fechaRegistro DATETIME NOT NULL,
+
+idUsuario INT(20) NOT NULL,
+
+documento LONGBLOB NOT NULL,
+
+version VARCHAR(10) NOT NULL,
+tipoDocumento VARCHAR(10) NOT NULL,
+PRIMARY KEY (idDocumento),
+
+INDEX usuario(idUsuario),
+FOREIGN KEY (idUsuario)
+ REFERENCES Usuario (idUsuario))
+ENGINE = InnoDB;
+
+CREATE TABLE Busqueda (
+idBusqueda INT(50) NOT NULL AUTO_INCREMENT,
+fecha DATETIME NOT NULL,
+idDocumento INT(30) NOT NULL,
+idUsuario INT(20) NOT NULL,
+PRIMARY KEY (idBusqueda),
+INDEX documento (idDocumento),
+INDEX usuario (idUsuario),
+FOREIGN KEY (idDocumento)REFERENCES Documento (idDocumento),
+FOREIGN KEY (idUsuario) REFERENCES Usuario (idUsuario))ENGINE = InnoDB;
+
+CREATE TABLE ReporteGlobal (
+idReporteGlobal INT(50) NOT NULL AUTO_INCREMENT,
+idDocumento INT(30) NOT NULL,
+descargas INT(30) NOT NULL,
+busqueda INT(30) NOT NULL,
+fecha DATETIME NOT NULL,
+idUsuario INT(20) NOT null,
+PRIMARY KEY (idReporteGlobal),
+INDEX documento (idDocumento),
+INDEX usuario (idUsuario),
+FOREIGN KEY (idDocumento) REFERENCES Documento (idDocumento),
+FOREIGN KEY (idUsuario) REFERENCES Usuario (idUsuario))ENGINE = InnoDB;
+
+CREATE TABLE Descarga (
+idDescarga INT(50) NOT NULL AUTO_INCREMENT,
+fecha DATETIME NOT NULL,
+idDocumento INT(30) NOT NULL,
+idUsuario INT(20) NOT NULL,
+PRIMARY KEY (idDescarga),
+INDEX documento (idDocumento),
+INDEX usuario (idUsuario),
+FOREIGN KEY (idDocumento) REFERENCES Documento (idDocumento),
+FOREIGN KEY (idUsuario) REFERENCES Usuario (idUsuario))ENGINE = InnoDB;
+
+CREATE TABLE Actualizacion (
+  idDocumento INT(30) NOT NULL,
+fechaVersion DATETIME NOT NULL,
+
+idUsuario INT(20) NOT NULL,
+documento LONGBLOB NOT NULL,
+version INT(5) NOT NULL,
+
+tipoDocumento VARCHAR(10) NOT NULL,
+PRIMARY KEY (idDocumento),
+INDEX usuario (idUsuario),
+FOREIGN KEY (idUsuario)
+ REFERENCES Usuario (idUsuario)
+,
+FOREIGN KEY (idDocumento)
+ REFERENCES Documento (idDocumento)
+
+)ENGINE = InnoDB;
+
+CREATE TABLE Retencion (
+idRetencion INT(5) NOT NULL AUTO_INCREMENT,
+fechaVencimiento DATETIME(0) NOT NULL,
+idDocumento INT(30) NOT NULL,
+PRIMARY KEY (idRetencion),
+INDEX documento (idDocumento),
+FOREIGN KEY (idDocumento) REFERENCES Documento (idDocumento))ENGINE = InnoDB;
+
+CREATE TABLE ReporteEspecifico (
+idReporteEspecifico INT(50) NOT NULL AUTO_INCREMENT,
+idDocumento INT(30) NOT NULL,
+Version VARCHAR(10) NOT NULL,
+fechaVersion DATETIME(0) NOT NULL,
+idUsuario INT(20) NOT NULL,
+PRIMARY KEY (idReporteEspecifico),
+INDEX usuario (idUsuario),
+FOREIGN KEY (idUsuario) REFERENCES Usuario (idUsuario),
+FOREIGN KEY (idDocumento) REFERENCES Documento (idDocumento))ENGINE = InnoDB;
+
+INSERT INTO ROL(idRol,cargo)
+values(null,"Administrador"),
+      (null,"Operario");
+
+INSERT INTO Usuario(idUsuario, primNombre, segNombre, primApellido, segApellido, email, idRol, Password)
+values(1030647666, "Einer", null, "Mendez", "palomino", "eomendez6@misena.edu.co", 1, 'AbCd12345'),
+      (1030647555, "Juan", null, "Cardenas", "Buitrago", "eomendez6@misena.edu.co", 2,'AbCd12345');
+
+update usuario set password= "1030647666" where idUsuario = 1030647666;
+update usuario set password= "1030647555" where idUsuario = 1030647555;
+
+
