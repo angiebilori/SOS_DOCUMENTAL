@@ -17,37 +17,39 @@
     ArrayList<String> datosA = (ArrayList<String>) objsesion.getAttribute("datosA");
 
     if (usuario == null) {
-        response.sendRedirect("autenticacion.jsp");
+        //response.sendRedirect("autenticacion.jsp");
     }
 
 %>
 <!DOCTYPE html>
 <html>
     <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link type="text/css" href="css/consultas.css" rel="stylesheet">
+
         <script type="text/javascript" src="jQuery/cargarArchivo.js"></script>
         <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=0.3,maximun-scale=5.0, minimum-scale=0.3">
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Consultas</title>
     </head>
     <body>
-        <div class="cuerpo">
+        <div class="contenedor">
             <form action="busqueda" method="Post">
-                <div id="titulo">Búsquedas</div>
-                <div id="encabezado">
+                
+                <div class="titulo">Búsquedas</div>
+                <div class="encabezado">
                     <label for="txtIdNom">Código o nombre documento</label>    
-                    <input type="text" name="txtIdNom" required="">
+                    <input type="text" name="txtIdNom" required="" placeholder="Ingresa código documento">
                     <!--
                     <label for="fecha">Fecha en que se guardo el documento</label>
                     <input type="date" name="fecha" id="fecha">
                     -->
                 </div>
-                <div id="btn">
-                    <input type="submit" value="Buscar" name="btnBuscar">
-                    <input type="button" id="botones" onclick="location.href = 'menu.jsp'" value="Salir">
+                <div class="botones">
+                    <input type="submit" id="btn" value="Buscar" name="btnBuscar">
+                    <input type="button" id="btn" onclick="location.href = 'menu.jsp'" value="Salir">
                 </div>
                 <% if (datosA != null) {%>
-                <div id="resultado">
+                <div class="resultado">
                     <table>
                         <tr>
                             <th colspan="7">Documento(s) Con actualizaciones recientes</th>                           
@@ -57,7 +59,7 @@
                             <th>Nombre Documento</th>
                             <th>Fecha actualización</th>
                             <th>Usuario-registro</th>
-                            <th>Version Actualización</th>
+                            <th>Version</th>
                             <th>Tipo Documento</th>
                             <th>Descargar</th>
                         </tr>
@@ -76,7 +78,7 @@
                 </div>
                 <%}
                     if (datos != null) {%>
-                <div id="resultado">
+                <div class="resultado">
                     <table>
                         <tr>
                             <th>Código Documento</th>                           
@@ -100,7 +102,7 @@
 
                         <%}%> </table>
                 </div><%}%>
-                <div id="informacion">
+                <div class="informacion">
                     <label id="ok"><%if (ok != null) {%>
                         <%=ok%>
                         <%objsesion.removeAttribute("ok");

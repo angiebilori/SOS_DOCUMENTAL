@@ -8,7 +8,7 @@
 
 <%
     HttpSession objsesion = request.getSession(false); //Obtener la sesion iniciada"false"
-    
+
     String usuario = (String) objsesion.getAttribute("usuario"); //Obtenermos los datos del objeto
     String rol = (String) objsesion.getAttribute("rol");
     String doc = (String) objsesion.getAttribute("idUsuario");
@@ -29,20 +29,35 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link type="text/css" href="css/menu.css" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0,maximun-scale=5.0, minimum-scale=1.0">
         <title>Menu</title>
     </head>
     <body>
-        <form action="cerrarSesion" method="post">
-            <h1>Bienvenid@ <%out.println(usuario);%></h1>
-            <h2>Cargo: <%out.println(rol);%> CC: <%out.println(doc);%></h2>
-            <a href="cerrarSesion">Cerrar sesión</a>
-            <input type="submit" value="Cerrar Sesión">
-            <a href="registro.jsp">Registro</a>
-            <a href="anexos.jsp">Anexos</a>
-            <a href="cambioContrasena.jsp">Cambiar contraseña</a>
-            <a href="consultas.jsp">Busquedas</a>
-            <a href="reportes.jsp">Reportes</a>
-
-        </form> 
+        <div class="contenedor">     
+            <form action="cerrarSesion" method="post">
+                <div class="logo">
+                    <a href="menu.jsp"><img src="../logo/LOGO.gif" alt="No se puede cargar la imagen"></a>
+                </div>
+                <ul class="menu1">
+                    <li><a href="consultas.jsp" target="ventana_iframe">Busquedas</a></li>
+                    <li><a href="anexos.jsp" target="ventana_iframe">Documento</a></li>
+                    <li><a href="reportes.jsp" target="ventana_iframe">Reportes</a></li>
+                    <li><a href="">Ayuda</a></li>
+                    <li><a href=""><%out.println(usuario);%></a>
+                        <ul class="menu2">
+                            <li id="usuario">CC: <%out.println(doc);%> <br> Rol: <%out.println(rol);%></li>
+                            <li><a href="registro.jsp" target="ventana_iframe">Nuevo Registro</a></li>
+                            <li><a href="cambioContrasena.jsp" target="ventana_iframe">Cambiar Contraseña</a></li>
+                            <li><a href="cerrarSesion">Cerar Sesión</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="iframe">
+                    <iframe id="frame" name="ventana_iframe" scrolling="yes" >
+                    </iframe> 
+                </div>
+            </form>   
+        </div>
     </body>
 </html>

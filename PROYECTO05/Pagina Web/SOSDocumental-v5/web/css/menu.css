@@ -1,0 +1,104 @@
+*{
+    box-sizing: border-box; /*Ocupar todo el ancho*/
+    margin: 0px;/*Cero margen*/
+    padding: 0px;
+}
+body{
+    padding-left: 1%;
+    width: 99%;
+}
+.contenedor{
+    width: 100%;
+    height: 800px;
+    box-shadow: 2px 2px 3px 1px rgba(0,0,0,.8); /*Profundidad*/
+    background: -webkit-linear-gradient(top,#F3FCFF, #FDF9F2); /*Degradar los colores*/
+}
+.logo{
+    width: 100%;
+    padding: 10px;
+    background-color: white;
+    background-repeat: no-repeat;
+    text-align: center;
+    float: left;
+}
+.logo img{
+    width: 60%;
+}
+ul{
+    list-style: none;/*Quitar los puntos de las listas*/
+}
+
+/*Diseño del menu*/
+li a, #usuario{
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    padding: 15px 15px;
+    display: block;
+    text-align: center;
+    width: 100%;
+}
+.menu1 > li{
+    float: left;
+    width: 20%;
+}
+.menu2{
+    width: 20%;
+}
+/*Para esconder el menu y tener una posicion absoluta*/
+.menu1 li ul{
+    display: none;
+    position: absolute;
+}
+/*Cuando pase el mouse*/
+li a:hover, #usuario:hover{
+    background-color: #434343;
+    border-radius: 15px; /*Redondear la caja*/
+}
+
+/*Cuando pase el mouse*/
+ul li:hover>ul{
+    display:block; /*Mostrar los sub menus*/
+}   
+iframe{
+    margin-top: 0.5%; /*MArgen superior*/
+    width: 100%;
+    height: 650px;
+    /*border: none; /*Quitar los bordes*/
+}
+
+
+/*Cuando la pantalla sea menor a hacer*/
+@media only screen and (max-width: 650px) {
+    #header{
+        font: 10px Arial, Helvetica, sans-serif; /*Tipo y tamaño de la letra*/
+    }
+    .menu li a:hover {
+        padding: 14px; /*Tamaño de la seleccion*/
+    }
+    .menu1 > li{
+        float: none;
+        width: 100%;
+    }
+    .menu2{
+        width: 100%;
+    }
+    .logo{
+        margin-bottom: 10px;
+    }
+    .logo img{
+        width: 102%;
+    }
+    li a{
+        padding: 8px 8px;
+        display: block;
+    }
+    .contenedor{
+    height: 690px;
+    }
+    iframe{
+    height: 420px;
+    /*border: none; /*Quitar los bordes*/
+}
+}
+
