@@ -1,0 +1,112 @@
+*{
+    box-sizing: border-box;
+}
+html{
+    height: 100%;/*Para que el gradiente ocupe toda la pantalla*/
+}
+body{
+    background: -webkit-linear-gradient(top,#F3FCFF, #FDF9F2) no-repeat; /*Degradar los colores*/
+}
+
+.contenedor{
+    padding:0px;/*margen*/
+    cursor:pointer;
+
+    /*Centrar formulario*/
+    margin-top: 10%;
+    margin-left: auto;
+    margin-right: auto;
+
+    text-align: center;/*Centrar los objetos dentro del contenedor*/
+    border-radius:5px; /*probar con 10px se hacen ovalados los inputs*/
+    box-shadow: 2px 2px 3px 1px rgba(0,0,0,.8); /*Profundidad*/
+    background: -webkit-linear-gradient(top,#F3FCFF, #8ACED7); /*Degradar los colores*/
+    height: 350px; /*Alto caja text*/
+    width: 300px; /*Ancho caja text*/
+    overflow: hidden;
+}
+.logo{
+    width: 100%;
+}
+.logo img{
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 15px;
+}
+h1{
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    font:bold 26px Arial, Helvetica, sans-serif; /*Tipo letra*/
+}
+input[type="number"], input[type="password"]{
+    margin-bottom: 30px;/*Margen entre cajas*/
+
+    font-size: 15px; /*Tamaño de la letra*/
+    width: 75%; /*ancho de las cajas*/
+    outline: none; /*Quitar la seleccion*/
+    padding: 5px; /*Margen interna de las cajas*/
+    border: none; /*Quitar los bordes*/
+    border-bottom: 2px solid #051464; /*Color borde inferior*/
+}
+
+input[type="number"]{
+    background: url(../iconos/user1.png) no-repeat 0 3px; /*Para mover arriba-abajo la imagen 'jugar' con 2px, 5px */
+    padding-left: 25px; /*Sirve para darle espacio a la imagen, probar con 30px 10px y ver comportamiento*/
+}
+input[type="password"]{
+    background: url(../iconos/key1.png) no-repeat 0 3px;
+    padding-left: 25px;
+}
+
+#btn{
+    cursor: pointer;
+    margin: auto;
+    border-radius:5px; /*probar con 10px se hacen ovalados los inputs*/
+    box-shadow: 2px 2px 3px 1px rgba(0,0,0,.8); /*Profundidad*/
+    font:bold 16px Arial, Helvetica, sans-serif; /*Tipo letra*/
+    height: 35px; /*Alto caja*/
+    width: 150px; /*Ancho caja*/
+    background: -webkit-linear-gradient(top,#3B3A3A,#00A5CF); /*Degradar los colores*/
+    color: #fff; /*Color del texto*/
+}
+#error{
+    height: 30px;
+    margin-top: 10px;
+
+}
+#informacionA{
+    color: red;
+    font-size: 18px;
+}
+#informacionC{
+    color: green;
+    font-size: 18px;
+}
+#piepg{
+    text-align: left;
+    background: rgba(232, 248, 245, 0.3);/*0.3 es la transpariencia del color*/
+    padding-left: 15px;
+    padding-top: 5px;
+    height: 30px; /*Alto caja text*/
+    color: blue;
+}
+#btn:hover, #piepg:hover{
+    opacity: 0.8;
+}
+input[id="caja"]:focus{
+    background: none;
+    padding-left: 0px;
+    width: 75%;
+    border-bottom: 2px solid red;
+}
+input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button{
+    -webkit-appearance: none;
+    margin: 0;
+}
+/*Cuando la pantalla sea menor a hacer  mayor a 380px:Celulares*/
+@media only screen and (max-width: 380px) {
+    body{
+
+    }
+}
