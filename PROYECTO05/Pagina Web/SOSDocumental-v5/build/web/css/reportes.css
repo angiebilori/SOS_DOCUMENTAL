@@ -1,0 +1,28 @@
+body{
+    background: -webkit-linear-gradient(top,#F3FCFF, #FDFf9F2); /*Degradar los colores*/
+    margin: 0;
+}
+table{
+    border-collapse: collapse;
+}
+table th, table td{
+    border: solid 1px;
+    width: 17%;
+    padding: 0px;
+    text-align: center;
+
+}
+#resultado{
+    margin-top: 20px;
+
+}
+#tituloTabla{
+    font-size: 20px;
+    background-color: #FAFAFA;
+}
+#encabezadoTabla{
+    background-color: #A9F5A9;
+}
+@media only screen and (max-width:600px){
+
+}
