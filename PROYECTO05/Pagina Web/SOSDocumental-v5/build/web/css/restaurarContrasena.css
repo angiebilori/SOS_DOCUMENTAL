@@ -11,71 +11,84 @@ body{
     /*Centrar formulario*/
     margin-left: auto; 
     margin-right: auto;
-    margin-top: 4%;
+    margin-top: 8%;
     border-radius:5px; /*probar con 10px se hacen ovalados los inputs*/
     box-shadow: 2px 2px 3px 1px rgba(0,0,0,.8); /*Profundidad*/
     background: -webkit-linear-gradient(top,#F3FCFF, #8ACED7); /*Degradar los colores*/  
     width: 70%;
     height: 380px;
 }
-#titulo{
+.titulo{
     font:bold 28px Arial, Helvetica, sans-serif; /*Tipo letra*/
     text-align: center;
     width: 100%;
     margin-bottom: 30px;
 }
-#botones{
+.cuerpo{
+    margin-top: 0;
+    width: 100%;
+    float: left;
+    height: 70%;
+}
+.cuerpo label, .cuerpo #idDocumento, .cuerpo #correo, .cuerpo #contrasena, .cuerpo #verificar{
+    float: left;
+    width: 46%;
+}
+.cuerpo label{
+    font:bold 26px Arial, Helvetica, sans-serif; /*Tipo letra*/
+}
+.cuerpo input{
+    border-radius:5px; /*probar con 10px se hacen ovalados los inputs*/
+    box-shadow: 2px 2px 3px 1px rgba(0,0,0,.8); /*Profundidad*/
+    font:bold 16px Arial, Helvetica, sans-serif; /*Tipo letra*/
+    height: 35px; /*Alto caja text*/
+    padding-left: 15px;
+    margin-bottom: 17px;
+}
+
+.cuerpo input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button{
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.informacion{
+    float: left;
+    text-align: center;
+    height: 35px;
+    color: red;
+    width: 100%;
+    font-size: 25px;
+}
+.botones{
+    float: left;
+    width: 100%;
+
+    text-align: center;
+}
+.botones #btn{
     margin-top: 10px;
     border-radius:5px; /*probar con 10px se hacen ovalados los inputs*/
     box-shadow: 2px 2px 3px 1px rgba(0,0,0,.8); /*Profundidad*/
     font:bold 16px Arial, Helvetica, sans-serif; /*Tipo letra*/
     height: 35px; /*Alto caja text*/
-    width: 150px; /*Ancho caja text*/
+    width: 20%; /*Ancho caja text*/
     background: -webkit-linear-gradient(top,#3B3A3A,#00A5CF); /*Degradar los colores*/
     color: #fff; /*Color del texto*/
     text-align: center;
 }
-input{
-    border-radius:5px; /*probar con 10px se hacen ovalados los inputs*/
-    box-shadow: 2px 2px 3px 1px rgba(0,0,0,.8); /*Profundidad*/
-    font:bold 16px Arial, Helvetica, sans-serif; /*Tipo letra*/
-    height: 35px; /*Alto caja text*/
-    width: 90%; /*Ancho caja text*/
-    padding-left: 15px;
-    margin-bottom: 17px;
-}
-input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button{
-    -webkit-appearance: none;
-    margin: 0;
-}
 
-.contenedor div{
-    float: left;
-    margin-top: 0;
-    width: 48%;
-}
-h2{
-    font:bold 20px Arial, Helvetica, sans-serif; /*Tipo letra*/
-    margin-left: 12px;
-    margin-bottom: 30px;
-}
-#cajas{
-    margin-right: 15px;
-}
-#btn{
-    text-align: center;
-    width: 100%;
-}
-#error{
-    text-align: center;
-    height: 40px;
-    color: red;
-    width: 100%;
-    font-size: 25px;
-}
-@media only screen and (max-width: 500px) {
-    h2{
-        font-size: 17px;
-        margin-bottom: 35px;
+@media only screen and (max-width: 650px) {
+
+    .contenedor{
+        margin-top: 20%;
+    }
+    .informacion{
+        font-size: 15px;
+    }
+    .cuerpo label{
+        font-size: 16px; /*Tipo letra*/
+    }
+    .botones #btn{
+        width: 30%; /*Ancho caja text*/
     }
 }

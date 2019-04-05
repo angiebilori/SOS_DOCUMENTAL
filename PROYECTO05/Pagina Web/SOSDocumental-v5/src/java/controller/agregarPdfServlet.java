@@ -27,7 +27,7 @@ import model.fecha;
 @MultipartConfig(maxFileSize = 16177215)    // upload file's size up to 16MB
 
 public class agregarPdfServlet extends HttpServlet {
-
+    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -48,8 +48,6 @@ public class agregarPdfServlet extends HttpServlet {
         String version = "1";
         String fecha = "";
         Part filePart = request.getPart("documento"); //Se obtiene el documento
-        
-        
 
         documento doc = new documento();
         fecha fec = new fecha();
@@ -60,7 +58,7 @@ public class agregarPdfServlet extends HttpServlet {
         }
 
         InputStream documento = null;
-        
+
         if (filePart.getSize() > 0) {
             documento = filePart.getInputStream();
         } else {
