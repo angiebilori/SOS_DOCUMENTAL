@@ -51,7 +51,9 @@ public class cambiarContrasenaServlet extends HttpServlet {
                         objsesion.setAttribute("ok", "El cambio de contraseña se realizó con éxito ");
                         response.sendRedirect("cambioContrasena.jsp");
                     } else {
+                        System.out.println("error");
                         objsesion.setAttribute("ok", "Se cambio la contaseña, no se envió información");
+                        response.sendRedirect("cambioContrasena.jsp");
                     }
                 } else {
                     objsesion.setAttribute("error", "No se logró realizar el cambio de contraseña");

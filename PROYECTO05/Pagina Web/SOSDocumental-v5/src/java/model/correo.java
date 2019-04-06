@@ -15,7 +15,8 @@ import javax.mail.internet.MimeMessage;
  * @author Einer
  */
 public class correo {
-
+ 
+    
     public boolean enviarCorreo(String email, String asuntoMensaje, String cuerpoMensaje) throws UnknownHostException {
 
         //Optener la ip local
