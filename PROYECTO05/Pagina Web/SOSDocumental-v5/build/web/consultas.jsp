@@ -17,15 +17,15 @@
     ArrayList<String> datosA = (ArrayList<String>) objsesion.getAttribute("datosA");
 
     if (usuario == null) {
-        //response.sendRedirect("autenticacion.jsp");
-    }
+        response.sendRedirect("autenticacion.jsp");
+    } else {
 
 %>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link type="text/css" href="css/consultas.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="/css/consultas.css">
 
         <script type="text/javascript" src="jQuery/cargarArchivo.js"></script>
         <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=0.3,maximun-scale=5.0, minimum-scale=0.3">
@@ -34,19 +34,20 @@
     <body>
         <div class="contenedor">
             <form action="busqueda" method="Post">
-                
-                <div class="titulo">Búsquedas</div>
+                <div class="titulo">
+                    <h1>BÚSQUEDAS</h1>
+                </div>
                 <div class="encabezado">
                     <label for="txtIdNom">Código o nombre documento</label>    
-                    <input type="text" name="txtIdNom" required="" placeholder="Ingresa código documento">
+                    <input type="text" name="txtIdNom" required="" id="txtIdNom" placeholder="Ingresa código documento">
                     <!--
                     <label for="fecha">Fecha en que se guardo el documento</label>
                     <input type="date" name="fecha" id="fecha">
                     -->
                 </div>
                 <div class="botones">
-                    <input type="submit" id="btn" value="Buscar" name="btnBuscar">
-                    <input type="button" id="btn" onclick="location.href = 'menu.jsp'" value="Salir">
+                    <input type="submit" value="Buscar" name="btnBuscar">
+                    <input type="button" onclick="location.href = 'menu.jsp'" value="Salir">
                 </div>
                 <% if (datosA != null) {%>
                 <div class="resultado">
@@ -98,8 +99,6 @@
                         <td><%=datos.get(j + 4)%></td>
                         <td><%=datos.get(j + 5)%></td>
                         <td><a href="descargar?des=doc&idDocumento=<%=datos.get(j)%>">Descargar</a></td>
-
-
                         <%}%> </table>
                 </div><%}%>
                 <div class="informacion">
@@ -111,10 +110,14 @@
                     <label id="error"><%if (error != null) {%>
                         <%=error%>
                         <%objsesion.removeAttribute("error");
-                            }%>
+                            }
+                            objsesion.removeAttribute("datos");
+                            objsesion.removeAttribute("datosA");
+                        %>
                     </label>
                 </div>
             </form>
         </div>
     </body>
 </html>
+<%}%>

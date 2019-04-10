@@ -16,7 +16,7 @@
         //if(cambioContrasenaServlet == null){
         response.sendRedirect("autenticacion.jsp");
         // }
-    }
+    } else {
 %>
 <!DOCTYPE html>
 <html>
@@ -44,7 +44,7 @@
                 </div>
                 <div class="informacion">
                         <label id="error"><%if (error != null) {%><%=error%><%objsesion.removeAttribute("error");//Remueve el usuario
-                        }%></label> 
+                            }%></label> 
                 </div>
                 <div class="botones">
                     <input type="submit" id="btn" VALUE="Siguiente" >    
@@ -54,3 +54,4 @@
         </div>
     </body>
 </html>
+<%}%>

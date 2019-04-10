@@ -36,6 +36,10 @@
         <servlet-name>reporteServlet</servlet-name>
         <servlet-class>controller.reporteServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>agregarManualServlet</servlet-name>
+        <servlet-class>controller.agregarManualServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>autenticar</servlet-name>
         <url-pattern>/iniciar</url-pattern>
@@ -71,6 +75,10 @@
     <servlet-mapping>
         <servlet-name>reporteServlet</servlet-name>
         <url-pattern>/reporte</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>agregarManualServlet</servlet-name>
+        <url-pattern>/agregarManual</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

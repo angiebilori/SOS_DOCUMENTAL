@@ -13,7 +13,7 @@
     String rol = (String) objsesion.getAttribute("rol");
     String doc = (String) objsesion.getAttribute("idUsuario");
 
-    //Cuando ingrese al menu se borran los datos utilizados en otros modulos
+    //Cuando ingrese o recargue al menu se borran los datos utilizados en otros modulos
     objsesion.removeAttribute("datos");
     objsesion.removeAttribute("datosA");
     objsesion.removeAttribute("error");
@@ -22,9 +22,8 @@
 
     if (usuario == null) {//Si los datos obtenidos son nulos o no hay datos, redireccionamos a lapagina de Autenticacion
         response.sendRedirect("autenticacion.jsp");
-    }
+    }else{
 %>
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -43,11 +42,13 @@
                     <li><a href="consultas.jsp" target="ventana_iframe">Busquedas</a></li>
                     <li><a href="anexos.jsp" target="ventana_iframe">Documento</a></li>
                     <li><a href="reportes.jsp" target="ventana_iframe">Reportes</a></li>
-                    <li><a href="">Ayuda</a></li>
-                    <li><a href=""><%out.println(usuario);%></a>
+                    <li><a href="agregarManual.jsp" target="ventana_iframe">Ayuda</a></li>
+                    <li><a><%out.println(usuario);%></a>
                         <ul class="menu2">
                             <li id="usuario">CC: <%out.println(doc);%> <br> Rol: <%out.println(rol);%></li>
+                                <%if (rol.equals("Administrador")){%>
                             <li><a href="registro.jsp" target="ventana_iframe">Nuevo Registro</a></li>
+                                <%}%>
                             <li><a href="cambioContrasena.jsp" target="ventana_iframe">Cambiar Contraseña</a></li>
                             <li><a href="cerrarSesion">Cerar Sesión</a></li>
                         </ul>
@@ -61,3 +62,4 @@
         </div>
     </body>
 </html>
+<%}%>

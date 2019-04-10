@@ -17,7 +17,7 @@
 
     if (usuario == null) {
         response.sendRedirect("autenticacion.jsp");
-    }
+    } else {
 
 %>
 
@@ -30,12 +30,12 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <form action="reporte" method="post">
-            <div>
-                <div>
-                    <h1>Reportes</h1>
+        <div class="contenedor">
+            <form action="reporte" method="post">
+                <div class="titulo">
+                    <h1>REPORTES</h1>
                 </div>
-                <div>
+                <div class="encabezado">
                     <label for="idDocumento">Id Documento</label>
                     <input type="numer" name="idDocumento" id="idDocumento" required>
 
@@ -46,7 +46,7 @@
                         <option value="reporteGlobal">Reporte Global</option>
                     </select>
                 </div>
-                <div>
+                <div class="botones">
                     <input type="submit" name="consultar" value="Consultar">
                     <input type="button" name="Salir" value="salir" onclick="location.href = 'menu.jsp'">
                 </div>
@@ -78,7 +78,7 @@
                     </table>
                 </div>
                 <%}%>
-                <div id="informacion">
+                <div class="informacion">
                     <!-- <input type="button" name="Salir" value="Exportar reporte" onclick="location.href = ''">-->
 
                     <%if (ok != null) {%>
@@ -89,8 +89,12 @@
                     <%}
                         objsesion.removeAttribute("ok");
                         objsesion.removeAttribute("error");
+                        objsesion.removeAttribute("datos");
+                        objsesion.removeAttribute("datosA");
                     %>
                 </div>
-        </form>
+            </form>
+        </div>
     </body>
 </html>
+<%}%>

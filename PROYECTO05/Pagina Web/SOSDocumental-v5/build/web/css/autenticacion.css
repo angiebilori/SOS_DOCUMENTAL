@@ -36,11 +36,11 @@ body{
     padding-top: 20px;
     padding-bottom: 15px;
 }
-h1{
+.titulo{
+    font:bold 15px Arial, Helvetica, sans-serif; /*Tipo letra*/
     text-align: center;
-    margin-top: 0px;
-    margin-bottom: 20px;
-    font:bold 26px Arial, Helvetica, sans-serif; /*Tipo letra*/
+    width: 100%;
+    margin-bottom: 10px;
 }
 input[type="number"], input[type="password"]{
     margin-bottom: 30px;/*Margen entre cajas*/
