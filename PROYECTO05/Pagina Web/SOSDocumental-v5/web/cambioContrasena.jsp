@@ -15,11 +15,9 @@
     String error = (String) objsesion.getAttribute("error");
     String ok = (String) objsesion.getAttribute("ok");
 
-    if (usuario == null) {
-        if (cambioContrasena == null) {
-            response.sendRedirect("autenticacion.jsp");
-        }
-    }
+    if (usuario == null & cambioContrasena == null) {
+        response.sendRedirect("autenticacion.jsp");
+    } else {
 
 %>
 <!DOCTYPE html>
@@ -34,42 +32,45 @@
     <body>
         <div class="contenedor">
             <form action="cambiarContrasena" method="post">
-                <div id="titulo">
-                    Cambiar contraseña
+                <div class="titulo">
+                    <h1>CAMBIAR CONTRASEÑA</h1>
                 </div>
-                <div id="error">
-                    <label id="informacionCC"><%if (cambioContrasena != null) {%><%=cambioContrasena%><%}%></label> 
+                <div class="informacion">
+                    <label id="error"><%if (cambioContrasena != null) {%><%=cambioContrasena%><%}%></label> 
                 </div>
 
-                <div id="subtitulo">
-                    <Label for="usuario">Usuario</label><br><br><br>
-                    <Label for="password">Contraseña</Label><br><br><br>
-                    <Label for="nPassword">Nueva contraseña (Mayor a 9 digitos)</Label><br><br><br>
-                    <Label for="vPassword"> Verificar nueva contraseña</Label>
-                </div>
-                <div id="txt">
+                <div class="encabezado">
+
+                    <label for="usuario">Usuario</label>
                     <input id="usuario" name="usuario" type="number" required placeholder="Cedula">
+
+                    <label for="password">Contraseña</label>
                     <input id="password" name="password" type="password" required placeholder="Contraseña">
+
+                    <label for="nPassword">Nueva contraseña</label>
                     <input id="nPassword" type="password" name="nuevoPassword" required placeholder="Nueva Contraseña">
+
+                    <label for="vPassword"> Verificar nueva contraseña</label>
                     <input id="vPassword" name="verificarPassword" type="password" required placeholder="Repetir Neva Contraseña">
                 </div>
-                <div id="error">
-                    <label id="informacionCCo"><%if (error != null) {%><%=error%><%objsesion.removeAttribute("error");//Remueve el usuario
-                            }%></label> 
-                    <label id="informacionCCi"><%if (ok != null) {%><%=ok%><%objsesion.removeAttribute("ok");//Remueve el usuario
-                            }%></label> 
+                <div class="informacion">
+                    <label id="error"><%if (error != null) {%><%=error%><%objsesion.removeAttribute("error");//Remueve el usuario
+                        }%></label> 
+                    <label id="ok"><%if (ok != null) {%><%=ok%><%objsesion.removeAttribute("ok");//Remueve el usuario
+                        }%></label> 
                 </div>
-                <div id="btn">
+                <div class="botones">
                     <%if (ok == null) {%>
-                    <input type="submit" id="botones" VALUE="Siguiente" >    
-                    <input type="button" id="botones" onclick="location.href = 'autenticacion.jsp'" value="Cancelar">
+                    <input type="submit" VALUE="Siguiente" >    
+                    <input type="button" onclick="location.href = 'autenticacion.jsp'" value="Cancelar">
                     <%}
                         if (ok != null) {%>
-                    <input type="button" id="botones" onclick="location.href = 'autenticacion.jsp'" value="Cerrar">
+                    <input type="button" onclick="location.href = 'autenticacion.jsp'" value="Cerrar">
                     <%objsesion.removeAttribute("cambioContrasena");
-                         }%>
+                        }%>
                 </div>
             </form>
         </div>
     </body>
 </html>
+<%}%>

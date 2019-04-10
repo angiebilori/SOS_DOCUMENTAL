@@ -8,7 +8,7 @@
 
 <%
     HttpSession objsesion = request.getSession(false); //Obtener la sesion iniciada"false"
-    
+
     String usuario = (String) objsesion.getAttribute("usuario"); //Obtenermos los datos del objeto
     String rol = (String) objsesion.getAttribute("rol");
 
@@ -20,8 +20,8 @@
     } else {
         if (!rol.equals("Administrador")) {//Si tiene cargo de operario no puede ingresar al modulo
             response.sendRedirect("menu.jsp");
-        }
-    }
+        } else {
+
 %>
 <!DOCTYPE html>
 <html>
@@ -29,7 +29,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link type="text/css" rel="stylesheet" href="css/registro.css">
         <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=0.5, maximun-scale=5.0, minimum-scale=0.5">
-        
+
         <title>Registro de usuarios</title>
     </head>
     <body>
@@ -62,9 +62,9 @@
                 </div>
                 <div id="informacion">
                         <label id="informacionE"><%if (error != null) {%><%=error%><%objsesion.removeAttribute("error");
-                                }%></label>
+                            }%></label>
                         <label id="informacionV"><%if (ok != null) {%><%=ok%><%objsesion.removeAttribute("ok");
-                                }%></label>
+                            }%></label>
                 </div>
                 <div id="btn">
                     <input type="submit" id="botones" VALUE="Registrar" >    
@@ -74,3 +74,6 @@
         </form>
     </body>
 </html>
+<%}
+    }
+%>

@@ -16,7 +16,7 @@
 
     if (usuario != null) {//Si los datos obtenidos son nulos o no hay datos, redireccionamos a lapagina de Autenticacion
         response.sendRedirect("menu.jsp");
-    }
+    } else {
 %>
 <!DOCTYPE html>
 <html>
@@ -33,7 +33,9 @@
                 <div class="logo">
                     <img src="logo/LOGO.png" alt="No se logro cargar la imagen">
                 </div>
-                <h1>INGRESO</h1>
+                <div class="titulo">
+                    <h1>INGRESO</h1>
+                </div>
                 <!--"required" sirve para no dejar campos vacios  -->
                 <div>
                     <input type="number" name="idUsuario" id="caja" placeholder="Digite Usuario" required><br>
@@ -41,10 +43,10 @@
                     <input type="submit" id="btn" value="Iniciar Sesion">
                 </div>
                 <div class="informacion">
-                        <label id="error"><%if (error != null) {%><%=error%><%objsesion.removeAttribute("error");//Remueve el usuario
+                    <label id="error"><%if (error != null) {%><%=error%><%objsesion.removeAttribute("error");//Remueve el usuario
                             }%></label>
-                    <label id="ok"><%if (ok != null) {%><%=ok%><%objsesion.removeAttribute("ok");//Remueve el usuario
-                            }%></label> 
+                        <label id="ok"><%if (ok != null) {%><%=ok%><%objsesion.removeAttribute("ok");//Remueve el usuario
+                        }%></label> 
                 </div>
                 <div id="piepg">
                     <a href="restaurarContrasena?cambioContrasena=restaurar">Restaurar contraseña</a> 
@@ -53,3 +55,4 @@
         </div>
     </body>
 </html>
+<%}%>
