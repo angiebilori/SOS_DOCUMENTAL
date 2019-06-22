@@ -1,0 +1,68 @@
+#permisos{
+    top: 0;
+    left: 0;
+
+    background-color: rgba(0,0,0,0.7);
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+}
+
+#contenidoPermisos{
+    margin: auto;
+    width: 50%;
+    height: 90%;
+    background-color: #fff;
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+#resultadoPermisos{
+    float: left;
+    width: 100%;
+    height: 90%;
+    overflow: auto;
+}
+
+#resultadoPermisos table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#resultadoPermisos table th, #resultadoPermisos table td{
+    border: 1px solid;
+}
+
+#resultadoPermisos table th{
+    text-align: center;
+    height: 30px;
+    font: bold 17px Arial, Helvetica, sans-serif; /*Tipo letra*/
+}
+#resultadoPermisos table #t1{
+    background-color: orange;
+}
+#resultadoPermisos table #t2{
+    background-color: gainsboro;
+}
+#resultadoPermisos table td{
+    height: 25px;
+    font: 14px Arial, Helvetica, sans-serif; /*Tipo letra*/
+}
+#resultadoPermisos table #info{
+    color: red;
+    background-color: yellow;
+}
+#resultadoPermisos table tr:hover{
+    background-color: lightskyblue;
+}
+#resultadoPermisos table tr td label{
+    cursor: pointer;
+    float: left;
+    height: 100%;
+    width: 100%;
+}
+#resultadoPermisos table tr #check{
+    text-align: center;
+}
+
