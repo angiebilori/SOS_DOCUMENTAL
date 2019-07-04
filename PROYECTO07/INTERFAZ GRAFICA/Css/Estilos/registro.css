@@ -1,0 +1,74 @@
++
+
+body{ 
+    background: -webkit-linear-gradient(top,#F3FCFF, #FfDF9F2); /*Degradar los colores*/
+    margin: 0;
+}
+
+#cuerpo{
+    
+   padding:5px;/*margen*/
+   
+    
+    /*Centrar formulario*/
+    margin-left: auto; 
+    margin-right: auto;
+    margin-top: 5%;
+
+    border-radius:5px; /*probar con 10px se hacen ovalados los inputs*/
+    box-shadow: 2px 2px 3px 1px rgba(0,0,0,.8); /*Profundidad*/
+    background: -webkit-linear-gradient(top,#F3FCFF, #8ACED7); /*Degradar los colores*/  
+    width: 50vw;
+    
+    
+    
+
+}
+#titulo{
+    font-family: "Myriad Pro", Arial Bold;
+     font-size: 2.5vw;
+    font-style: italic;
+    text-align: center;
+    height: 5vw; /*Alto caja text*/
+}
+
+input#botones{
+    cursor:pointer;
+       margin-top: 4px;
+    border-radius:5px; /*probar con 10px se hacen ovalados los inputs*/
+    box-shadow: 2px 2px 3px 1px rgba(0,0,0,.8); /*Profundidad*/
+    font-family: "Myriad Pro", Arial Bold;
+    font-size: 2vw;
+    font-style: italic;/*Estilo letra*/ /*Tipo letra*/
+    height: 4vw; /*Alto caja text*/
+    width: 15vw; /*Ancho caja text*/
+    background: -webkit-linear-gradient(top, #BD6A07 0%,  #F9F22B 20%, #D9B661 50%, #FFFFFF 60%, #D8AB3D 70%, #724612 100%); /*Degradar los colores*/
+    color: #000; /*Color del texto*/
+}
+#boton{
+    text-align: center;
+     height: 75px;
+}
+input#botones:hover{ /*Opciones de resaltado*/
+      background: -webkit-linear-gradient(top, #D69F5D 0%,  #FFFB7E 20%, #F2D899 50%, #FFFFFF 60%, #F7CD65 70%, #A96F2A 100%); /*Degradar los colores*/
+    color: #000; /*Color del texto*/
+    text-decoration: underline;
+    text-decoration-color: white;
+}
+input,select{
+    margin-top: 5px;
+    border-radius:5px; /*probar con 10px se hacen ovalados los inputs*/
+    box-shadow: 2px 2px 3px 1px rgba(0,0,0,.8); /*Profundidad*/
+    font-family: "Myriad Pro", Arial Bold;
+     font-size: 1.5vw;
+    font-style: italic;
+    height: 3vw 3vh; /*Alto caja text*/
+    width: 70%; /*Ancho caja text*/
+    padding-left: 1px;
+}
+#subtitulos{
+     font-family: "Myriad Pro", Arial Bold;
+     font-size: 1.5vw;
+    font-style: italic;
+padding-left: 25px;
+}

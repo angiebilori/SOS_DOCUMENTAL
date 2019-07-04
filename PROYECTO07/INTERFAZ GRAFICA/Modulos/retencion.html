@@ -1,0 +1,75 @@
+<html>
+  <head>
+        <title>RETENCION </title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <link type="text/css" href="../Css/Estilos/retencion.css" rel="stylesheet">
+    </head>
+   <form name="loginform" id="loginform" method="post" action="validar.jsp"> 
+        
+            <div id="titulo">RETENCION</div>
+
+            <table id="cuerpo" border="1px">
+
+                <tr>
+                    <td id="textDoc">
+                        Nombre del doumento
+                    </td>   
+                    <td id="nomDocumento">
+                         <input name ="nomDocumento" type="text" placeholder="Búscar" autofocus required id="doc">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td id="textFec">
+                       Fecha de vencimiento 
+                    </td> 
+                    <td  id="fecha">
+                        <input type="date" name="fecha" id="fec" >
+                    </td>                
+                </tr>
+
+                <tr id="pie">
+                    <td>
+                        
+                    </td>
+                </tr>
+            </table>
+
+            <div id="titulo">
+                <input type="submit" name="submit" id="btnBuscar" value="Búscar" >
+            </div>
+            
+        </form>
+    <div id="tablas">
+    <table id="RetencionDoc"border="1px"> 
+        
+    <tr>
+    <td id="Retencion">
+        <strong>Nombre documento</strong></td>
+        
+    <td><strong>Fecha Documento</strong></td>
+    </tr>
+        
+    <tr>
+    <td id="Retencion1">
+        <strong>PLAN DE CONTINGENCIA DE EQUIPOS.PDF</strong></td>
+    <td id="fechaR3"><strong>02/06/2019</strong></td>
+    </tr>  
+        <tr>
+        <td id="Retencion2">
+        <strong>INVENTARIO COMPUTADORAS.XLSX</strong></td>
+    <td id="fechaR"><strong>24/10/2019</strong></td>
+        </tr>
+        <tr>
+         <td id="Retencion3">
+        <strong>REGISTRO Y MANTENIMIENTO DE SERVIDORES.DOCX</strong></td>
+    <td id=fechaR1><strong>31/07/2019</strong></td>
+        </tr>
+        <tr> <td id="Retencion4">
+        <strong>INFORME EMPRESARIAL.PDF</strong></td>
+    <td id=fechaR2><strong>07/05/2019</strong></td>
+        </tr>
+    </div>
+
+
+</html>
