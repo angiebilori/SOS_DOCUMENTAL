@@ -1,0 +1,112 @@
+
+body{
+    /*background: -webkit-linear-gradient(top,#F3FCFF, #FDF9F2);*/ /*Degradar los colores*/
+    background:#FFFFFF url("../imagenes/fondo.png")no-repeat center center fixed;  
+    /*background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:12px;
+    font-style: italic;*/
+    margin: 1px;
+    font-family:"Myriad Pro", Arial Bold; /*Tipo letra*/
+}
+
+#cuerpo{
+
+    padding:5px;/*margen*/
+    cursor:pointer;
+   
+    /*Centrar formulario*/
+    margin-left: auto; 
+    margin-right: auto;
+    margin-top: 12%;
+    
+    border-radius:5px; /*probar con 10px se hacen ovalados los inputs*/
+    box-shadow: 5px 5px 8px 2px rgba(0,0,0,.8); /*Profundidad*/
+/*    background: -webkit-linear-gradient(top,#F3FCFF, #8ACED7); Degradar los colores*/
+    height: 10vh; /*Alto caja text*/
+    width: 5em; /*Ancho caja text*/
+}
+#logo{
+    border-bottom-color: aqua;
+    width: 100%;
+}
+#logo img{
+    margin:10px auto;
+	display:block;
+    width: 35vw;
+    
+}
+#titulo{
+    font-family:"Myriad Pro", Arial Bold; /*Tipo letra*/
+    font-size:  2.3vw; /* Tamaño Letra*/
+    font-style: italic;/*Estilo letra*/
+    height: 5vw; /*Alto caja text*/
+    text-align:center;
+    
+}
+
+#text, #titulo{
+   text-align: center;
+} 
+ 
+input#contrasenia, input#usuario{
+    margin-top: 10px;
+    border-radius:5px; /*probar con 10px se hacen ovalados los inputs*/
+    box-shadow: 2px 2px 3px 1px rgba(0,0,0,.8); /*Profundidad*/
+    font:bold 1.2vw Arial, Helvetica, sans-serif; /*Tipo letra*/
+    height: 4vw; /*Alto caja text*/
+    width: 25vw; /*Ancho caja text*/
+}
+ 
+input#usuario{
+    background:#ffffff url(../Imagenes/user.png) no-repeat 0 2px; /*probar con #ddf.
+     Para mover arriba-abajo la imagen 'jugar' con 2px, 5px */
+    /*Para que el texto dentro del input se mueva*/
+    padding-left: 25px; /*Sirve para darle espacio ala imagen, probar con 30px 10px y ver comportamiento*/
+}
+ 
+input#contrasenia{
+    background:#ffffff url(../Imagenes/key.png) no-repeat 0 2px;
+    padding-left: 25px;
+    
+}
+
+input#submit{
+    margin-top: 4px;
+    border-radius:5px; /*probar con 10px se hacen ovalados los inputs*/
+    box-shadow: 2px 2px 3px 1px rgba(0,0,0,.8); /*Profundidad*/
+    font-family:"Myriad Pro", Arial Bold; /*Tipo letra*/
+    font-size: 3.5vh ; /* Tamaño Letra*/
+    font-style: italic;/*Estilo letra*/ /*Tipo letra*/
+    height: 4vw; /*Alto caja text*/
+    width: 15vw; /*Ancho caja text*/
+    background: -webkit-linear-gradient(top, #BD6A07 0%,  #F9F22B 20%, #D9B661 50%, #FFFFFF 60%, #D8AB3D 70%, #724612 100%); /*Degradar los colores*/
+    color: #000; /*Color del texto*/
+}
+#boton{
+text-align: center;/*Centrar boton*/
+
+}
+ 
+/*Tip estas instrucciones animan al boton enviar * para que se vea como si se pulsara*/
+.boton:active{
+    position: relative;
+    top: 3px;
+}
+#pie{
+    background-color: #E5E6E6;
+    height: 2vh; /*Alto caja text*/
+}
+a{
+    font-family:"Myriad Pro", Arial Bold; /*Tipo letra*/
+    color: blue;
+    font-size: 2vh;
+    text-align: left;
+    padding-left: 10px;/*padding-left = sangria*/
+}
+
+
+ 
