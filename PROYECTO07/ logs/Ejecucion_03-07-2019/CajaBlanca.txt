@@ -1,0 +1,13 @@
+ Usuario: christian.rico //  Fecha:Wed Jul 03 17:13:38 COT 2019 //  Accion: Ingreso Usuario //  Descripcion: la plataforma permitió la digitación del usuario // 
+ Usuario: christian.rico //  Fecha:Wed Jul 03 17:13:39 COT 2019 //  Accion: Ingreso password //  Descripcion: la plataforma permitió la digitación de la contraseña // 
+ Usuario: christian.rico //  Fecha:Wed Jul 03 17:15:30 COT 2019 //  Accion: Ingreso Usuario //  Descripcion: la plataforma permitió la digitación del usuario // 
+ Usuario: christian.rico //  Fecha:Wed Jul 03 17:15:31 COT 2019 //  Accion: Ingreso password //  Descripcion: la plataforma permitió la digitación de la contraseña // 
+ Usuario: christian.rico //  Fecha:Wed Jul 03 17:18:34 COT 2019 //  Accion: Ingreso Usuario //  Descripcion: la plataforma permitió la digitación del usuario // 
+ Usuario: christian.rico //  Fecha:Wed Jul 03 17:18:35 COT 2019 //  Accion: Ingreso password //  Descripcion: la plataforma permitió la digitación de la contraseña // 
+ Usuario: christian.rico //  Fecha:Wed Jul 03 17:18:49 COT 2019 //  Accion: clic en Iniciar Sesión //  Descripcion: Sistema toma datos de Usuario valida directamente en el campo idUsuario // 
+ Usuario: christian.rico //  Fecha:Wed Jul 03 17:18:50 COT 2019 //  Accion: clic en Iniciar Sesion //  Descripcion: Sistema toma datos de contraseña calida directament6e en el campo password // 
+ Usuario: christian.rico //  Fecha:Wed Jul 03 17:18:51 COT 2019 //  Accion: clic en Inciar Sesion //  Descripcion: se realiza la validación de stado de usuario si es activo // 
+ Usuario: christian.rico //  Fecha:Wed Jul 03 17:18:53 COT 2019 //  Accion: Validacion de datos de ingreso //  Descripcion: coinciden os datos de entrada con BD, sistema permite el acceso a Menu principal // 
+ Usuario: christian.rico //  Fecha:Wed Jul 03 17:19:00 COT 2019 //  Accion: clic en Administrar perfil //  Descripcion: el sistema recibe el comando y redirecciona la información de la pagina de administracion de perfiles // 
+ Usuario: christian.rico //  Fecha:Wed Jul 03 17:19:27 COT 2019 //  Accion: Ingreso de datos de nuevo Perfil" Crear Usuarios" //  Descripcion: Validación BD // 
+ Usuario: christian.rico //  Fecha:Wed Jul 03 17:19:28 COT 2019 //  Accion: Ingreso de datos de nuevo Perfil" Crear Usuarios" //  Descripcion: Validación BD arroja que no existen los datos ingresados y se genera el registro // 

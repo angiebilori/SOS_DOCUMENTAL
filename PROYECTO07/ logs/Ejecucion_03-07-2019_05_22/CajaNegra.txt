@@ -1,0 +1,5 @@
+ Usuario: christian.rico //  Fecha:Wed Jul 03 17:22:37 COT 2019 //  Entrada: Datos de usuario y contraseña //  Funcionalidad: validación en base de datos //  Salida: validación en base de datos // 
+ Usuario: christian.rico //  Fecha:Wed Jul 03 17:22:41 COT 2019 //  Entrada: Ingreso de Crendenciales //  Funcionalidad: Validación de BD e ingreso a Menu Principal //  Salida: Validación de BD e ingreso a Menu Principal // 
+ Usuario: christian.rico //  Fecha:Wed Jul 03 17:23:08 COT 2019 //  Entrada: Datos de nuevo perfil " Crear Usuarios" //  Funcionalidad: Validación de BD y registro en tabla perfil //  Salida: Validación de BD y registro en tabla perfil // 
+ Usuario: christian.rico //  Fecha:Wed Jul 03 17:23:24 COT 2019 //  Entrada: Datos de nuevo perfil " Listar Usuarios" //  Funcionalidad: Validación de BD y registro en tabla perfil //  Salida: Validación de BD y registro en tabla perfil // 
+ Usuario: christian.rico //  Fecha:Wed Jul 03 17:23:38 COT 2019 //  Entrada: Datos de nuevo perfil " Modificar Usuarios" //  Funcionalidad: Validación de BD y registro en tabla perfil //  Salida: Validación de BD y registro en tabla perfil // 
