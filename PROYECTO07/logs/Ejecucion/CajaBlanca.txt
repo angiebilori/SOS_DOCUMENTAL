@@ -1,0 +1,13 @@
+ Usuario: christian.rico //  Fecha:Wed Jul 03 16:16:06 COT 2019 //  Accion: Ingreso Usuario //  Descripcion: la plataforma permitió la digitación del usuario // 
+ Usuario: christian.rico //  Fecha:Wed Jul 03 16:16:07 COT 2019 //  Accion: Ingreso password //  Descripcion: la plataforma permitió el ingreso // 
+ Usuario: christian.rico //  Fecha:Wed Jul 03 16:16:11 COT 2019 //  Accion: clic en Iniciar Sesión //  Descripcion: SIstema toma datos de Usuario valida directamente en el campo idUsuario // 
+ Usuario: christian.rico //  Fecha:Wed Jul 03 16:16:12 COT 2019 //  Accion: clic en Iniciar Sesion //  Descripcion: Sistema toma datos de contraseña calida directament6e en el campo password // 
+ Usuario: christian.rico //  Fecha:Wed Jul 03 16:16:14 COT 2019 //  Accion: clic en Inciar Sesion //  Descripcion: se realiza la validación de stado de usuario si es activo // 
+ Usuario: christian.rico //  Fecha:Wed Jul 03 16:16:16 COT 2019 //  Accion: Validacion de datos de ingreso //  Descripcion: conciden os datos de entrada con BD, sistema permite el acceso a Menu principal // 
+ Usuario: christian.rico //  Fecha:Wed Jul 03 16:18:31 COT 2019 //  Accion: Ingreso Usuario //  Descripcion: la plataforma permitió la digitación del usuario // 
+ Usuario: christian.rico //  Fecha:Wed Jul 03 16:18:33 COT 2019 //  Accion: Ingreso password //  Descripcion: la plataforma permitió el ingreso // 
+ Usuario: christian.rico //  Fecha:Wed Jul 03 16:18:43 COT 2019 //  Accion: clic en Iniciar Sesión //  Descripcion: SIstema toma datos de Usuario valida directamente en el campo idUsuario // 
+ Usuario: christian.rico //  Fecha:Wed Jul 03 16:18:44 COT 2019 //  Accion: clic en Iniciar Sesion //  Descripcion: Sistema toma datos de contraseña calida directament6e en el campo password // 
+ Usuario: christian.rico //  Fecha:Wed Jul 03 16:18:45 COT 2019 //  Accion: clic en Inciar Sesion //  Descripcion: se realiza la validación de stado de usuario si es activo // 
+ Usuario: christian.rico //  Fecha:Wed Jul 03 16:18:48 COT 2019 //  Accion: Validacion de datos de ingreso //  Descripcion: conciden os datos de entrada con BD, sistema permite el acceso a Menu principal // 
+ Usuario: christian.rico //  Fecha:Wed Jul 03 16:18:58 COT 2019 //  Accion: clic en Administrar perfil //  Descripcion: el sistema recibe el comando y redirecciona la información de la pagian de administracion de perfiles // 

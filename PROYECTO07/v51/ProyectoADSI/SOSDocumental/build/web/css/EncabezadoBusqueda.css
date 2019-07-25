@@ -1,0 +1,7 @@
+#buscarNuevo label,#listar label,#listar input[type="search"], #buscarNuevo input[type="search"],.inputs input,.inputs label,
+.encabezado input,.encabezado label{
+    width: 200px;
+    height: 35px;
+    font: bold 16px Arial;
+}
+

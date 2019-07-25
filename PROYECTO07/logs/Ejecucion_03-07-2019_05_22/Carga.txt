@@ -1,0 +1,3 @@
+ Usuario: christian.rico //  Fecha:Wed Jul 03 17:22:21 COT 2019 //  Elemento: Autenticación //  Descripcion: cargó pagina exitosamente // 
+ Usuario: christian.rico //  Fecha:Wed Jul 03 17:22:44 COT 2019 //  Elemento: Carga exitosa //  Descripcion: Cargó correctamente del menu principal // 
+ Usuario: christian.rico //  Fecha:Wed Jul 03 17:22:52 COT 2019 //  Elemento: Carga exitosa //  Descripcion: Cargó correctamente la sección de Administrar Perfil // 

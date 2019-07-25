@@ -1,0 +1,4 @@
+ Usuario: christian.rico //  Fecha:Wed Jul 03 16:16:10 COT 2019 //  Entrada: Datos de usuario y contraseña //  Funcionalidad: validación en base de datos //  Salida: validación en base de datos // 
+ Usuario: christian.rico //  Fecha:Wed Jul 03 16:16:15 COT 2019 //  Entrada: ingreso de Crendenciales //  Funcionalidad: Validación de BD e ingreso a MEnu Principal //  Salida: Validación de BD e ingreso a MEnu Principal // 
+ Usuario: christian.rico //  Fecha:Wed Jul 03 16:18:42 COT 2019 //  Entrada: Datos de usuario y contraseña //  Funcionalidad: validación en base de datos //  Salida: validación en base de datos // 
+ Usuario: christian.rico //  Fecha:Wed Jul 03 16:18:47 COT 2019 //  Entrada: ingreso de Crendenciales //  Funcionalidad: Validación de BD e ingreso a MEnu Principal //  Salida: Validación de BD e ingreso a MEnu Principal // 

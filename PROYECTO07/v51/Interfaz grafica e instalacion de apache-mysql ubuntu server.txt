@@ -1,0 +1,27 @@
+--------------Ubutu server Interfaz grafica.
+
+sudo apt update
+sudo apt install --no-install-recommends lubuntu-desktop
+sudo reboot
+
+--------------Instalacion de apache
+
+sudo apt-get update
+sudo apt-get install apache2
+sudo ufw status
+sudo ufw enable
+sudo ufw status
+sudo ufw app list
+sudo ufw app imfo *Apache Full*
+sudo ufw app info "Apache Full" //Informacion de puertos de Apache
+
+----------------Instalar FireFox ultima version
+
+sudo apt-get update
+sudo apt-get install firefox
+
+----------------Instalar Mysql-server
+sudo apt-get update
+sudo apt-get install mysql-server
+sudo mysql_secure_installaction
+

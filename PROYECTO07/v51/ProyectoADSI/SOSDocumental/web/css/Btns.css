@@ -1,0 +1,39 @@
+#buscarNuevo, #btn{
+    width: 100%;
+    height: 60px;
+    /*background-color: gray;*/
+    text-align: center;
+}
+#buscarNuevo input[type="submit"],input[type="submit"],#listar input[type="submit"],.listar input[type="button"],.botones input{
+    height: 35px;
+    width: 110px;
+   background: -webkit-linear-gradient(top, rgba(179,220,237,1) 0%, rgba(41,184,229,1) 50%, rgba(188,224,238,1) 100%);
+    /* background-color: #8ACED7;*/
+    border-radius: 5px;
+}
+.btn input{
+  height: 35px;
+    width: 110px;
+   background: -webkit-linear-gradient(top, rgba(179,220,237,1) 0%, rgba(41,184,229,1) 50%, rgba(188,224,238,1) 100%);
+    /* background-color: #8ACED7;*/
+    border-radius: 5px;
+    margin-left: 45%;
+    margin-top: 5%;
+}
+
+#buscarNuevo input[type="submit"]{
+    margin: 0px 5px;
+}
+
+
+#btn input{
+    margin: 10px;
+}
+
+#buscarNuevo input[type="submit"]:hover, #btn input:hover{
+   /* background-color: #FFFFFF;
+   */
+   background: -webkit-linear-gradient(top, rgba(41,185,229,1) 0%, rgba(188,224,238,1) 32%, rgba(242,244,245,1) 48%, rgba(188,224,238,1) 66%, rgba(41,185,229,1) 100%);
+   
+   }
+

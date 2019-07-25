@@ -1,0 +1,28 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2/07/2019, 11:14:59 AM
+    Author     : christian.rico
+*/
+.previsualizar{
+    clear: both;
+    margin-top: 30px;
+    width: 50%;
+    height: 0px;
+    overflow: hidden;/*Ocultar lo que sobra*/
+    text-align: center;
+    position: relative;
+    margin-left: 25vw;
+}
+.prev2{
+    
+}
+/*#bloquearpdf{
+    margin-top: 0px;
+    width: 98%;
+    height: 55px;
+    position: absolute;
+}*/
